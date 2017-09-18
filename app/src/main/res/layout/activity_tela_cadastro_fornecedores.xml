@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    tools:context="leonardo_matheus.e_commerce.TelaCadastroFornecedores">
+
+    <TextView
+        android:id="@+id/TV_Nome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="25dp"
+        android:text="Nome:" />
+
+    <EditText
+        android:id="@+id/ET_Nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/TV_Nome"
+        android:layout_below="@+id/TV_Nome"
+        android:layout_marginTop="5dp"
+        android:layout_alignParentStart="true"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/TV_CEP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ET_Nome"
+        android:layout_below="@+id/ET_Nome"
+        android:layout_marginTop="25dp"
+        android:layout_alignParentStart="true"
+        android:text="CEP:" />
+
+    <EditText
+        android:id="@+id/ET_CEP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/TV_CEP"
+        android:layout_below="@+id/TV_CEP"
+        android:layout_marginTop="5dp"
+        android:layout_alignParentStart="true"
+        android:width="150dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/TV_Cidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cidade:"
+        android:layout_above="@+id/ET_CEP"
+        android:layout_alignStart="@+id/ET_Cidade" />
+
+    <EditText
+        android:id="@+id/ET_Cidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@id/TV_Cidade"
+        android:layout_marginTop="5dp"
+        android:width="150dp"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/TV_Pais"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ET_Cidade"
+        android:layout_marginTop="25dp"
+        android:layout_alignParentStart="true"
+        android:text="País:" />
+
+    <EditText
+        android:id="@+id/ET_Pais"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/TV_Pais"
+        android:layout_marginTop="5dp"
+        android:width="150dp"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/TV_Estado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estado:"
+        android:layout_below="@+id/ET_Cidade"
+        android:layout_marginTop="25dp"
+        android:layout_alignEnd="@+id/TV_Cidade" />
+
+    <Spinner
+        android:id="@+id/SP_Estado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TV_Estado"
+        android:layout_marginTop="5dp"
+        android:layout_alignBottom="@+id/ET_Pais"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/ET_Cidade" />
+
+    <TextView
+        android:id="@+id/TV_Telefone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telefone:"
+        android:layout_below="@+id/ET_Pais"
+        android:layout_marginTop="25dp"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/ET_Telefone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/TV_Telefone"
+        android:layout_marginTop="5dp"
+        android:width="150dp"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:id="@+id/TV_Complemento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Complemento:"
+        android:layout_below="@+id/ET_Telefone"
+        android:layout_marginTop="25dp"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/ET_Complemento"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/TV_Complemento"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:layout_alignParentStart="true"
+        android:gravity="top|left"
+        android:lines="3" />
+
+</RelativeLayout>
