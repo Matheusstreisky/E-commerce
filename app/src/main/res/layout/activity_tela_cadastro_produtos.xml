@@ -4,26 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="15dp"
     tools:context="leonardo_matheus.e_commerce.TelaCadastroProdutos">
+
+    <include android:id="@+id/ToolbarMenu" layout="@layout/toolbar_menu" />
 
     <TextView
         android:id="@+id/TV_Nome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginTop="25dp"
-        android:text="Nome:" />
+        android:layout_below="@id/ToolbarMenu"
+        android:text="@string/string_nome" />
 
     <EditText
-        android:id="@+id/ED_Nome"
+        android:id="@+id/ET_Nome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/TV_Nome"
         android:layout_marginTop="5dp"
         android:ems="10"
+        android:labelFor="@id/ET_Nome"
         android:inputType="textPersonName" />
 
     <TextView
@@ -31,12 +33,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/ED_Nome"
+        android:layout_below="@+id/ET_Nome"
         android:layout_marginTop="25dp"
-        android:text="Valor:" />
+        android:text="@string/string_valor" />
 
     <EditText
-        android:id="@+id/ED_Valor"
+        android:id="@+id/ET_Valor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -44,6 +46,7 @@
         android:layout_marginTop="5dp"
         android:width="150dp"
         android:ems="10"
+        android:labelFor="@id/ET_Valor"
         android:inputType="textPersonName" />
 
     <TextView
@@ -51,12 +54,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/ED_Valor"
+        android:layout_below="@+id/ET_Valor"
         android:layout_marginTop="25dp"
-        android:text="Quantidade:" />
+        android:text="@string/string_quantidade" />
 
     <EditText
-        android:id="@+id/ED_Quantidade"
+        android:id="@+id/ET_Quantidade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -64,6 +67,7 @@
         android:layout_marginTop="5dp"
         android:width="150dp"
         android:ems="10"
+        android:labelFor="@id/ET_Quantidade"
         android:inputType="textPersonName" />
 
     <TextView
@@ -71,9 +75,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/ED_Quantidade"
+        android:layout_below="@+id/ET_Quantidade"
         android:layout_marginTop="25dp"
-        android:text="Descrição:" />
+        android:text="@string/string_descricao" />
 
     <EditText
         android:id="@+id/ET_Descricao"
@@ -86,5 +90,7 @@
         android:ems="10"
         android:inputType="textMultiLine"
         android:lines="5"
-        android:gravity="left|top"/>
+        android:gravity="start"
+        android:labelFor="@id/ET_Descricao" />
+
 </RelativeLayout>
