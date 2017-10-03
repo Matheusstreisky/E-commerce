@@ -1,0 +1,133 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/textNome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="@string/string_nome"
+            tools:ignore="HardcodedText,MissingConstraints,RtlHardcoded"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp" />
+
+        <EditText
+            android:id="@+id/editNome"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:ems="10"
+            android:hint="Nome Completo"
+            android:inputType="textPersonName"
+            app:layout_constraintLeft_toLeftOf="@+id/textNome"
+            tools:ignore="HardcodedText,MissingConstraints,RtlHardcoded"
+            tools:layout_editor_absoluteY="44dp"
+            android:layout_above="@+id/textSenha"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textNome" />
+
+        <TextView
+            android:id="@+id/textSenha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="@string/string_senha"
+            tools:ignore="RtlHardcoded"
+            android:layout_above="@+id/editSenha" />
+
+        <EditText
+            android:id="@+id/editSenha"
+            android:layout_width="312dp"
+            android:layout_height="51dp"
+            android:layout_above="@+id/textRepSenha"
+            android:layout_alignParentStart="true"
+            android:ems="10"
+            android:hint="Insira sua senha"
+            android:inputType="textPassword"
+            tools:ignore="HardcodedText,LabelFor,RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/textRepSenha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/editRepSenha"
+            android:layout_alignParentStart="true"
+            android:text="@string/string_rpt_senha"
+            tools:ignore="RtlHardcoded" />
+
+        <EditText
+            android:id="@+id/editRepSenha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textCPF"
+            android:layout_alignParentStart="true"
+            android:ems="10"
+            android:hint="Repita sua senha"
+            android:inputType="textPassword"
+            tools:ignore="HardcodedText,LabelFor,RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/textCPF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/editCPF"
+            android:layout_alignParentStart="true"
+            android:text="@string/string_CPF"
+            tools:ignore="RtlHardcoded" />
+
+        <EditText
+            android:id="@+id/editCPF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textNascimento"
+            android:layout_alignParentStart="true"
+            android:ems="10"
+            android:hint="@string/insira_seu_cpf"
+            android:inputType="number"
+            tools:ignore="LabelFor,RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/textNascimento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="@string/string_datNasc"
+            tools:ignore="RtlHardcoded" />
+
+        <EditText
+            android:id="@+id/editNascimento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textNascimento"
+            android:layout_marginTop="17dp"
+            android:ems="10"
+            android:hint="@string/insira_sua_data_de_nascimento"
+            android:inputType="datetime"
+            tools:ignore="LabelFor,RtlHardcoded" />
+
+        <Button
+            android:id="@+id/btn_conf_tela_cadastro"
+            android:layout_width="110dp"
+            android:layout_height="48dp"
+            android:layout_below="@+id/editNascimento"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="31dp"
+            android:layout_toEndOf="@+id/editNascimento"
+            android:layout_toRightOf="@+id/editNascimento"
+            android:text="@string/string_bt_cadastrar"
+            tools:ignore="RtlHardcoded" />
+
+    </RelativeLayout>
+</LinearLayout>
