@@ -31,7 +31,7 @@ public class CRUD_Fornecedores {
         long resultado = db.insert(DATABASE.TABELA_FORNECEDORES, null, valores);
         db.close();
 
-        if(resultado == -1)
+        if (resultado == -1)
             return "Erro ao inserir registro!";
         else
             return "Registro inserido com sucesso!";
