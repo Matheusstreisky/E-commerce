@@ -15,8 +15,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TelaCadastroProdutos" android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".TelaCadastroFornecedores" android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TelaCadastroProdutos"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TelaCadastroFornecedores"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TelaConsulta"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

@@ -12,6 +12,7 @@ public class TelaCadastroProdutos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_cadastro_produtos);
+
         Toolbar myToolbar = (Toolbar) findViewById(R.id.ToolbarMenu);
         myToolbar.setTitle(R.string.title_produto);
         setSupportActionBar(myToolbar);
@@ -25,6 +26,18 @@ public class TelaCadastroProdutos extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return false;
+        switch (item.getItemId()) {
+            case R.id.button_search:
+                break;
+            case R.id.button_save:
+                break;
+            case R.id.button_edit:
+                break;
+            case R.id.button_delete:
+                break;
+            default:
+                break;
+        }
+        return true;
     }
 }

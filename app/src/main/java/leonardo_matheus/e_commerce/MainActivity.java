@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         botao1.setOnClickListener(this);
         Button botao2 = (Button) findViewById(R.id.button2);
         botao2.setOnClickListener(this);
+        Button botao3 = (Button) findViewById(R.id.Consulta);
+        botao3.setOnClickListener(this);
     }
 
     @Override
@@ -33,6 +35,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = new Intent(this, TelaCadastroProdutos.class);
                 startActivity(intent);
                 break;
+            case R.id.Consulta:
+                intent = new Intent(this, TelaConsulta.class);
+                startActivity(intent);
             default:
                 break;
         }

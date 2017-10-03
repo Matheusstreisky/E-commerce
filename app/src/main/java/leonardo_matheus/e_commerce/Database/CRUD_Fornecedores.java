@@ -1,4 +1,4 @@
-package Database;
+package leonardo_matheus.e_commerce.Database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -26,7 +26,7 @@ public class CRUD_Fornecedores {
         valores.put(DATABASE.COLUNA_PAIS, pais);
         valores.put(DATABASE.COLUNA_ESTADO, estado);
         valores.put(DATABASE.COLUNA_TELEFONE, telefone);
-        valores.put(DATABASE.COLUNA_DESCRICAO, descricao);
+        valores.put(DATABASE.COLUNA_COMPLEMENTO, descricao);
 
         long resultado = db.insert(DATABASE.TABELA_FORNECEDORES, null, valores);
         db.close();
@@ -35,5 +35,17 @@ public class CRUD_Fornecedores {
             return "Erro ao inserir registro!";
         else
             return "Registro inserido com sucesso!";
+    }
+
+    public String alterarDados(int id, String nome, String CEP, String cidade, String pais, String estado, String telefone, String descricao) {
+        return "";
+    }
+
+    public String excluirDados(int id) {
+        return "";
+    }
+
+    public void consultarDados(int id) {
+
     }
 }

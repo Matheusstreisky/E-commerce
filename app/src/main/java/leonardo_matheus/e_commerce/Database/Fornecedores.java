@@ -1,4 +1,4 @@
-package Database;
+package leonardo_matheus.e_commerce.Database;
 
 /**
  * Created by Streisky on 18/09/2017.
@@ -13,16 +13,16 @@ public class Fornecedores {
     private String Pais;
     private String Estado;
     private String Telefone;
-    private String Descricao;
+    private String Complemento;
 
-    public Fornecedores(String nome, String CEP, String cidade, String pais, String estado, String telefone, String descricao) {
+    public Fornecedores(String nome, String CEP, String cidade, String pais, String estado, String telefone, String complemento) {
         this.setNome(nome);
         this.setCEP(CEP);
         this.setCidade(cidade);
         this.setPais(pais);
         this.setEstado(estado);
         this.setTelefone(telefone);
-        this.setDescricao(descricao);
+        this.setcomplemento(complemento);
     }
 
 
@@ -82,11 +82,11 @@ public class Fornecedores {
         Telefone = telefone;
     }
 
-    public String getDescricao() {
-        return Descricao;
+    public String getcomplemento() {
+        return Complemento;
     }
 
-    public void setDescricao(String descricao) {
-        Descricao = descricao;
+    public void setcomplemento(String complemento) {
+        complemento = complemento;
     }
 }
