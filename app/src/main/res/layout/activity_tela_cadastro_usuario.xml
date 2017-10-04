@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="leonardo_matheus.e_commerce.TelaCadastroFornecedores">
+    tools:context="leonardo_matheus.e_commerce.CadastroFornecedores">
 
     <include android:id="@+id/ToolbarMenu" layout="@layout/toolbar_menu" />
 

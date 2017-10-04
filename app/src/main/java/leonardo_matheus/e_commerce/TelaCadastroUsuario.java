@@ -19,7 +19,7 @@ public class TelaCadastroUsuario extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.button_menu, menu);
+        getMenuInflater().inflate(R.menu.buttons_toolbar_menu, menu);
         return true;
     }
 

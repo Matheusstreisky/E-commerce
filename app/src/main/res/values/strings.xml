@@ -11,7 +11,7 @@
 
     <!-- Strings dos Labels das Activitys -->
     <string name="app_name">E-commerce</string>
-    <string name="string_nome">Nome:</string>
+    <string name="string_nome">Nome*:</string>
     <string name="string_cep">CEP:</string>
     <string name="string_cidade">Cidade:</string>
     <string name="string_pais">País:</string>
@@ -21,6 +21,7 @@
     <string name="string_quantidade">Quantidade:</string>
     <string name="string_valor">Valor:</string>
     <string name="string_descricao">Descrição:</string>
+
     <string name="title_activity_tela_principal">TelaPrincipal</string>
     <string name="string_login">Faça seu Login</string>
     <string name="string_cadastro">Ou faça seu cadastro.</string>

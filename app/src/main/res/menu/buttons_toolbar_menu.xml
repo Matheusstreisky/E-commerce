@@ -29,6 +29,6 @@
         android:orderInCategory="200"
         android:title="@string/menu_delete"
         android:icon="@android:drawable/ic_menu_delete"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="never" />
 
 </menu>

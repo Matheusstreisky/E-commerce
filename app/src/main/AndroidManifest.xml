@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".TelaPrincipal"
+            android:name=".MainActivity"
             android:label="@string/title_activity_tela_principal"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -19,14 +19,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TelaCadastroProdutos"
+            android:name=".CadastroProdutos"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".TelaCadastroFornecedores"
+            android:name=".CadastroFornecedores"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".TelaCadastroUsuario" />
         <activity android:name=".TelaLogin" />
-        <activity android:name=".TelaCadastro"></activity>
+        <activity android:name=".TelaCadastro" />
+        <activity android:name=".Consulta" />
     </application>
 
 </manifest>

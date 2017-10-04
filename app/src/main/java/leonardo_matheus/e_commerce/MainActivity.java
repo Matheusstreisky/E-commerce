@@ -3,7 +3,6 @@ package leonardo_matheus.e_commerce;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
@@ -28,15 +27,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent;
         switch (v.getId()) {
             case R.id.button:
-                intent = new Intent(this, TelaCadastroFornecedores.class);
+                intent = new Intent(this, CadastroFornecedores.class);
                 startActivity(intent);
                 break;
             case R.id.button2:
-                intent = new Intent(this, TelaCadastroProdutos.class);
+                intent = new Intent(this, CadastroProdutos.class);
                 startActivity(intent);
                 break;
             case R.id.Consulta:
-                intent = new Intent(this, TelaConsulta.class);
+                intent = new Intent(this, Consulta.class);
                 startActivity(intent);
             default:
                 break;

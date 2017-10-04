@@ -25,6 +25,10 @@ public class Fornecedores {
         this.setcomplemento(complemento);
     }
 
+    public Fornecedores() {
+
+    }
+
 
     public int getid() {
         return id;

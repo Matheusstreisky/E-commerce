@@ -6,12 +6,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class TelaCadastroProdutos extends AppCompatActivity {
+public class CadastroProdutos extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_cadastro_produtos);
+        setContentView(R.layout.cadastro_produtos);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.ToolbarMenu);
         myToolbar.setTitle(R.string.title_produto);
@@ -20,7 +20,7 @@ public class TelaCadastroProdutos extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.button_menu, menu);
+        getMenuInflater().inflate(R.menu.buttons_toolbar_menu, menu);
         return true;
     }
 
