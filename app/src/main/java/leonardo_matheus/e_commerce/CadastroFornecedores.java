@@ -89,7 +89,7 @@ public class CadastroFornecedores extends AppCompatActivity {
             case R.id.button_search:
                 break;
             case R.id.button_save:
-                if(!nome.getText().toString().equals("")) {
+                if(!nome.getText().toString().equals("") && !telefone.getText().toString().equals("")) {
                     String resultado;
 
                     if(!this.getIntent().hasExtra("codigo"))
@@ -105,7 +105,7 @@ public class CadastroFornecedores extends AppCompatActivity {
                     finish();
                 }
                 else
-                    Toast.makeText(getApplicationContext(), "Insira o nome do Fornecedor!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Preencha os campos com *!", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button_edit:
                 break;

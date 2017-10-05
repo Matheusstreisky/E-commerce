@@ -16,10 +16,10 @@
     <string name="string_cidade">Cidade:</string>
     <string name="string_pais">País:</string>
     <string name="string_estado">Estado:</string>
-    <string name="string_telefone">Telefone:</string>
+    <string name="string_telefone">Telefone*:</string>
     <string name="string_complemento">Complemento:</string>
-    <string name="string_quantidade">Quantidade:</string>
-    <string name="string_valor">Valor:</string>
+    <string name="string_valor">Valor*:</string>
+    <string name="string_quantidade">Quantidade*:</string>
     <string name="string_descricao">Descrição:</string>
 
     <string name="title_activity_tela_principal">TelaPrincipal</string>
