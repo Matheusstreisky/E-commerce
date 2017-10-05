@@ -16,9 +16,11 @@ import java.util.Arrays;
 
 import leonardo_matheus.e_commerce.Database.CRUD_Fornecedores;
 import leonardo_matheus.e_commerce.Database.DATABASE;
+import leonardo_matheus.e_commerce.Database.Fornecedores;
 
 public class CadastroFornecedores extends AppCompatActivity {
 
+    private Fornecedores fornecedores;
     private String codigo;
     private EditText nome, cep, cidade, pais, telefone, complemento;
     private Spinner estado;
@@ -58,6 +60,7 @@ public class CadastroFornecedores extends AppCompatActivity {
             codigo = this.getIntent().getStringExtra("codigo");
             cursor = crud.carregarDados(Integer.parseInt(codigo));
 
+            fornecedores.setid(cursor.getInt(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_ID)));
             nome.setText(cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_NOME)));
             cep.setText(cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_CEP)));
             cidade.setText(cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_CIDADE)));
@@ -92,14 +95,19 @@ public class CadastroFornecedores extends AppCompatActivity {
                 if(!nome.getText().toString().equals("") && !telefone.getText().toString().equals("")) {
                     String resultado;
 
-                    if(!this.getIntent().hasExtra("codigo"))
-                        resultado = crud.inserirDados(nome.getText().toString(), cep.getText().toString(),
+                    if(!this.getIntent().hasExtra("codigo")) {
+                        fornecedores = new Fornecedores(nome.getText().toString(), cep.getText().toString(),
                                 cidade.getText().toString(), pais.getText().toString(), estado.getSelectedItem().toString(),
                                 telefone.getText().toString(), complemento.getText().toString());
-                    else
-                        resultado = crud.alterarDados(Integer.parseInt(codigo), nome.getText().toString(), cep.getText().toString(),
+                        resultado = crud.inserirDados(fornecedores);
+                    }
+                    else {
+                        fornecedores = new Fornecedores(nome.getText().toString(), cep.getText().toString(),
                                 cidade.getText().toString(), pais.getText().toString(), estado.getSelectedItem().toString(),
                                 telefone.getText().toString(), complemento.getText().toString());
+                        fornecedores.setid(Integer.parseInt(codigo));
+                        resultado = crud.alterarDados(fornecedores);
+                    }
 
                     Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
                     finish();
@@ -110,7 +118,7 @@ public class CadastroFornecedores extends AppCompatActivity {
             case R.id.button_edit:
                 break;
             case R.id.button_delete:
-                String resultado = crud.excluirDados(Integer.parseInt(codigo));
+                String resultado = crud.excluirDados(fornecedores);
                 Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
                 finish();
                 break;

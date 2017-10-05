@@ -56,9 +56,11 @@ public class DATABASE extends SQLiteOpenHelper {
                 + COLUNA_QUANTIDADE + " INTEGER NOT NULL,"
                 + COLUNA_DESCRICAO + " TEXT"
                 + ");";
+        String TABLE_CLIENTE = "";
 
         db.execSQL(TABLE_FORNECEDORES);
         db.execSQL(TABLE_PRODUTOS);
+        db.execSQL(TABLE_CLIENTE);
     }
 
     @Override

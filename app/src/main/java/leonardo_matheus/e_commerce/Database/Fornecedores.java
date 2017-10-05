@@ -5,7 +5,6 @@ package leonardo_matheus.e_commerce.Database;
  */
 
 public class Fornecedores {
-
     private int id;
     private String Nome;
     private String CEP;
@@ -23,10 +22,6 @@ public class Fornecedores {
         this.setEstado(estado);
         this.setTelefone(telefone);
         this.setcomplemento(complemento);
-    }
-
-    public Fornecedores() {
-
     }
 
 

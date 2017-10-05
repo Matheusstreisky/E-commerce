@@ -21,11 +21,11 @@ public class Tela_ADM extends AppCompatActivity {
         Intent intent;
         switch (v.getId()) {
             case R.id.btn_Produtos:
-                intent = new Intent(this, TelaCadastroProdutos.class);
+                intent = new Intent(this, CadastroProdutos.class);
                 startActivity(intent);
                 break;
             case R.id.btn_Fornecedores:
-                intent = new Intent(this, TelaCadastroFornecedores.class);
+                intent = new Intent(this, CadastroFornecedores.class);
                 startActivity(intent);
                 break;
             default:
