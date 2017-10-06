@@ -1,27 +1,21 @@
 package leonardo_matheus.e_commerce;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-
-import leonardo_matheus.e_commerce.Recycler.RecyclerMain;
-
-
-public class TelaLogin extends AppCompatActivity {
+public class CadastroPessoas extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tela_login);
+        setContentView(R.layout.cadastro_pessoas);
 
         // Seta toolbar como actionBar na tela
         Toolbar myToolbar = (Toolbar) findViewById(R.id.ToolbarMenu);
-        myToolbar.setTitle(R.string.title_login);
+        myToolbar.setTitle(R.string.title_pessoa);
         setSupportActionBar(myToolbar);
     }
 
@@ -31,31 +25,29 @@ public class TelaLogin extends AppCompatActivity {
 
         // Determina quais menus serão visiveis nesta tela
         menu.findItem(R.id.button_search).setVisible(false);
-        menu.findItem(R.id.button_save).setVisible(false);
         menu.findItem(R.id.button_edit).setVisible(false);
-        menu.findItem(R.id.button_delete).setVisible(false);
+        if(!this.getIntent().hasExtra("codigo"))
+            menu.findItem(R.id.button_delete).setVisible(false);
+
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return true;
-    }
-
-    public void onClick(View id) {
-
-        Intent it;
-        switch (id.getId()) {
-            case R.id.BT_Login:
-                it = new Intent(this, RecyclerMain.class);
-                startActivity(it);
+        // Executa determinado trecho de codigo para cada item do menu disponivel na tela
+        switch (item.getItemId()) {
+            case R.id.button_search:
                 break;
-            case R.id.BT_Cadastrar:
-                it = new Intent(this, CadastroPessoas.class);
-                startActivity(it);
+            case R.id.button_save:
                 break;
-
+            case R.id.button_edit:
+                break;
+            case R.id.button_delete:
+                break;
+            default:
+                break;
         }
 
+        return true;
     }
 }

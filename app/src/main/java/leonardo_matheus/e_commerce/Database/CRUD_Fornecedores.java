@@ -18,17 +18,17 @@ public class CRUD_Fornecedores {
         DATABASE = new DATABASE(context);
     }
 
-    public String inserirDados(Fornecedores fornecedores) {
+    public String inserirDados(String nome, String cep, String cidade, String pais, String estado, String telefone, String complemento) {
         db = DATABASE.getWritableDatabase();
         ContentValues valores = new ContentValues();
 
-        valores.put(DATABASE.COLUNA_NOME, fornecedores.getNome());
-        valores.put(DATABASE.COLUNA_CEP, fornecedores.getCEP());
-        valores.put(DATABASE.COLUNA_CIDADE, fornecedores.getCidade());
-        valores.put(DATABASE.COLUNA_PAIS, fornecedores.getPais());
-        valores.put(DATABASE.COLUNA_ESTADO, fornecedores.getEstado());
-        valores.put(DATABASE.COLUNA_TELEFONE, fornecedores.getTelefone());
-        valores.put(DATABASE.COLUNA_COMPLEMENTO, fornecedores.getcomplemento());
+        valores.put(DATABASE.COLUNA_NOME, nome);
+        valores.put(DATABASE.COLUNA_CEP, cep);
+        valores.put(DATABASE.COLUNA_CIDADE, cidade);
+        valores.put(DATABASE.COLUNA_PAIS, pais);
+        valores.put(DATABASE.COLUNA_ESTADO, estado);
+        valores.put(DATABASE.COLUNA_TELEFONE, telefone);
+        valores.put(DATABASE.COLUNA_COMPLEMENTO, complemento);
         long resultado = db.insert(DATABASE.TABELA_FORNECEDORES, null, valores);
         db.close();
 
@@ -38,18 +38,18 @@ public class CRUD_Fornecedores {
             return "Registro inserido com sucesso!";
     }
 
-    public String alterarDados(Fornecedores fornecedores) {
+    public String alterarDados(int id, String nome, String cep, String cidade, String pais, String estado, String telefone, String complemento) {
         db = DATABASE.getWritableDatabase();
         ContentValues valores = new ContentValues();
 
-        valores.put(DATABASE.COLUNA_NOME, fornecedores.getNome());
-        valores.put(DATABASE.COLUNA_CEP, fornecedores.getCEP());
-        valores.put(DATABASE.COLUNA_CIDADE, fornecedores.getCidade());
-        valores.put(DATABASE.COLUNA_PAIS, fornecedores.getPais());
-        valores.put(DATABASE.COLUNA_ESTADO, fornecedores.getEstado());
-        valores.put(DATABASE.COLUNA_TELEFONE, fornecedores.getTelefone());
-        valores.put(DATABASE.COLUNA_COMPLEMENTO, fornecedores.getcomplemento());
-        String where = DATABASE.COLUNA_ID + "=" + fornecedores.getid();
+        valores.put(DATABASE.COLUNA_NOME, nome);
+        valores.put(DATABASE.COLUNA_CEP, cep);
+        valores.put(DATABASE.COLUNA_CIDADE, cidade);
+        valores.put(DATABASE.COLUNA_PAIS, pais);
+        valores.put(DATABASE.COLUNA_ESTADO, estado);
+        valores.put(DATABASE.COLUNA_TELEFONE, telefone);
+        valores.put(DATABASE.COLUNA_COMPLEMENTO, complemento);
+        String where = DATABASE.COLUNA_ID + "=" + id;
         long resultado = db.update(DATABASE.TABELA_FORNECEDORES, valores, where, null);
         db.close();
 
@@ -59,9 +59,9 @@ public class CRUD_Fornecedores {
             return "Registro atualizado com sucesso!";
     }
 
-    public String excluirDados(Fornecedores fornecedores) {
+    public String excluirDados(int id) {
         db = DATABASE.getWritableDatabase();
-        String where = DATABASE.COLUNA_ID + "=" + fornecedores.getid();
+        String where = DATABASE.COLUNA_ID + "=" + id;
         long resultado = db.delete(DATABASE.TABELA_FORNECEDORES, where, null);
         db.close();
 

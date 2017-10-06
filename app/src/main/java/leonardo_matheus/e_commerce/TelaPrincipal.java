@@ -15,7 +15,6 @@ import android.view.MenuItem;
 
 import leonardo_matheus.e_commerce.Fragment.MangaFragment;
 import leonardo_matheus.e_commerce.Fragment.NovelFragment;
-import leonardo_matheus.e_commerce.Recycler.RecyclerMain;
 
 
 public class TelaPrincipal extends AppCompatActivity
@@ -24,7 +23,7 @@ public class TelaPrincipal extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_principal);
+        setContentView(R.layout.tela_principal);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 //
@@ -61,7 +60,7 @@ public class TelaPrincipal extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.tela_principal, menu);
+        getMenuInflater().inflate(R.menu.tela_principal_menu, menu);
         return true;
     }
 

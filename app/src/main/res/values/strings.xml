@@ -2,6 +2,10 @@
     <!-- Strings das Activitys -->
     <string name="title_fornecedor">Fornecedores</string>
     <string name="title_produto">Produtos</string>
+    <string name="title_pessoa">Pessoas</string>
+    <string name="title_consulta">Consulta</string>
+    <string name="title_login">Login</string>
+    <string name="title_administrador">Administrador</string>
 
     <!-- Strings dos botões do Menu -->
     <string name="menu_save">Salvar</string>
@@ -53,5 +57,5 @@
     <string name="listagem_dos_mangas">Listagem dos Mangas</string>
     <string name="listagem_das_novels">Listagem das Novels</string>
 
-
+    <string name="vazio">"</string>
 </resources>
