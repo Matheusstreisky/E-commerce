@@ -9,8 +9,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.Spinner;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import leonardo_matheus.e_commerce.Database.CRUD_Fornecedores;
 import leonardo_matheus.e_commerce.Database.CRUD_Produtos;
@@ -26,10 +31,35 @@ public class Consulta extends AppCompatActivity {
 
         // Seta toolbar como actionBar na tela
         Toolbar myToolbar = (Toolbar) findViewById(R.id.ToolbarMenu);
-        myToolbar.setTitle(R.string.title_pessoa);
+        myToolbar.setTitle(R.string.title_consulta);
         setSupportActionBar(myToolbar);
 
-        /*
+        // Seta o spinner com os determinados valores
+        Spinner selecionado = (Spinner) findViewById(R.id.SP_Selecione);
+        ArrayList<String> itens = new ArrayList<>(Arrays.asList(DATABASE.TABELA_FORNECEDORES.toString(),
+                DATABASE.TABELA_PRODUTOS.toString(), DATABASE.TABELA_PESSOAS.toString()));
+        ArrayAdapter<String> array = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, itens);
+        array.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        selecionado.setAdapter(array);
+
+        selecionado.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                switch (i) {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+
+
         CRUD_Fornecedores crud = new CRUD_Fornecedores(getBaseContext());
         final Cursor cursor = crud.consultarDados();
 
@@ -45,14 +75,15 @@ public class Consulta extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 cursor.moveToPosition(i);
                 String codigo = cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_ID));
-                Intent intent = new Intent(Consulta.this, CadastroFornecedores.class);
+                Intent intent = new Intent(Consulta.this, Visualizar.class);
                 intent.putExtra("codigo", codigo);
+                intent.putExtra("tela", "fornecedor");
                 startActivity(intent);
                 finish();
             }
         });
-        */
 
+        /*
         CRUD_Produtos crud = new CRUD_Produtos(getBaseContext());
         final Cursor cursor = crud.consultarDados();
 
@@ -68,12 +99,14 @@ public class Consulta extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 cursor.moveToPosition(i);
                 String codigo = cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_ID));
-                Intent intent = new Intent(Consulta.this, CadastroProdutos.class);
+                Intent intent = new Intent(Consulta.this, Visualizar.class);
                 intent.putExtra("codigo", codigo);
+                intent.putExtra("tela", "produto");
                 startActivity(intent);
                 finish();
             }
         });
+        */
     }
 
     @Override

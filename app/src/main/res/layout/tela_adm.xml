@@ -29,7 +29,7 @@
         android:text="Produtos" />
 
     <Button
-        android:id="@+id/Consulta"
+        android:id="@+id/btConsulta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button2"
@@ -37,5 +37,13 @@
         android:layout_marginTop="20dp"
         android:layout_toEndOf="@+id/button"
         android:text="Consulta" />
+
+    <Button
+        android:id="@+id/btPessoa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btConsulta"
+        android:layout_alignTop="@+id/button"
+        android:text="Pessoa" />
 
 </RelativeLayout>

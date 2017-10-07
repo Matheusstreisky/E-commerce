@@ -25,8 +25,10 @@ public class TelaAdm extends AppCompatActivity implements View.OnClickListener {
         botao1.setOnClickListener(this);
         Button botao2 = (Button) findViewById(R.id.button2);
         botao2.setOnClickListener(this);
-        Button botao3 = (Button) findViewById(R.id.Consulta);
+        Button botao3 = (Button) findViewById(R.id.btConsulta);
         botao3.setOnClickListener(this);
+        Button botao4 = (Button) findViewById(R.id.btPessoa);
+        botao4.setOnClickListener(this);
     }
 
     @Override
@@ -59,9 +61,14 @@ public class TelaAdm extends AppCompatActivity implements View.OnClickListener {
                 intent = new Intent(this, CadastroProdutos.class);
                 startActivity(intent);
                 break;
-            case R.id.Consulta:
+            case R.id.btPessoa:
+                intent = new Intent(this, CadastroPessoas.class);
+                startActivity(intent);
+                break;
+            case R.id.btConsulta:
                 intent = new Intent(this, Consulta.class);
                 startActivity(intent);
+                break;
             default:
                 break;
         }

@@ -31,9 +31,9 @@ public class CRUD_Pessoas {
         db.close();
 
         if (resultado == -1)
-            return "Erro ao inserir registro!";
+            return "Erro ao cadastrar!";
         else
-            return "Registro inserido com sucesso!";
+            return "Registro cadastrado com sucesso!";
     }
 
     public String alterarDados(int id, String nome, String cpf, int datanascimento, String senha) {
@@ -62,9 +62,9 @@ public class CRUD_Pessoas {
         db.close();
 
         if (resultado == -1)
-            return "Erro ao deletar registro!";
+            return "Erro ao excluir registro!";
         else
-            return "Registro deletado com sucesso!";
+            return "Registro excluido com sucesso!";
     }
 
     public Cursor consultarDados() {

@@ -53,8 +53,7 @@ public class CadastroProdutos extends AppCompatActivity {
         // Determina quais menus serão visiveis nesta tela
         menu.findItem(R.id.button_search).setVisible(false);
         menu.findItem(R.id.button_edit).setVisible(false);
-        if(!this.getIntent().hasExtra("codigo"))
-            menu.findItem(R.id.button_delete).setVisible(false);
+        menu.findItem(R.id.button_delete).setVisible(false);
 
         return true;
     }
@@ -65,7 +64,7 @@ public class CadastroProdutos extends AppCompatActivity {
             case R.id.button_search:
                 break;
             case R.id.button_save:
-                if(!nome.getText().toString().equals("") && !valor.getText().toString().equals("")) {
+                if(!nome.getText().toString().equals("") && !valor.getText().toString().equals("") && !quantidade.getText().toString().equals("")) {
                     String resultado;
 
                     if(!this.getIntent().hasExtra("codigo"))
@@ -79,14 +78,11 @@ public class CadastroProdutos extends AppCompatActivity {
                     finish();
                 }
                 else
-                    Toast.makeText(getApplicationContext(), "Preencha os campos com *!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button_edit:
                 break;
             case R.id.button_delete:
-                String resultado = crud.excluirDados(codigo);
-                Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
-                finish();
                 break;
             default:
                 break;

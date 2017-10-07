@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         tools:ignore="UselessParent">
 
-        <include android:id="@+id/ToolbarMenu" layout="@layout/toolbar_menu" />
+        <!-- <include android:id="@+id/ToolbarMenu" layout="@layout/toolbar_menu" /> -->
 
         <TextView
             android:id="@+id/textNome"

@@ -12,11 +12,13 @@ public class CadastroPessoas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cadastro_pessoas);
+    }
 
-        // Seta toolbar como actionBar na tela
+        /* Seta toolbar como actionBar na tela
         Toolbar myToolbar = (Toolbar) findViewById(R.id.ToolbarMenu);
         myToolbar.setTitle(R.string.title_pessoa);
         setSupportActionBar(myToolbar);
+
     }
 
     @Override
@@ -26,8 +28,7 @@ public class CadastroPessoas extends AppCompatActivity {
         // Determina quais menus serão visiveis nesta tela
         menu.findItem(R.id.button_search).setVisible(false);
         menu.findItem(R.id.button_edit).setVisible(false);
-        if(!this.getIntent().hasExtra("codigo"))
-            menu.findItem(R.id.button_delete).setVisible(false);
+        menu.findItem(R.id.button_delete).setVisible(false);
 
         return true;
     }
@@ -47,7 +48,7 @@ public class CadastroPessoas extends AppCompatActivity {
             default:
                 break;
         }
-
         return true;
     }
+    */
 }

@@ -25,7 +25,7 @@ public class DATABASE extends SQLiteOpenHelper {
     public static final String COLUNA_PAIS = "pais";
     public static final String COLUNA_ESTADO = "estado";
     public static final String COLUNA_TELEFONE = "telefone";
-    public static final String COLUNA_COMPLEMENTO = "descricao";
+    public static final String COLUNA_COMPLEMENTO = "complemento";
     public static final String COLUNA_VALOR = "valor";
     public static final String COLUNA_QUANTIDADE = "quantidade";
     public static final String COLUNA_DESCRICAO = "descricao";

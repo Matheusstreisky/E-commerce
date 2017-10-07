@@ -3,30 +3,33 @@
     <string name="title_fornecedor">Fornecedores</string>
     <string name="title_produto">Produtos</string>
     <string name="title_pessoa">Pessoas</string>
-    <string name="title_consulta">Consulta</string>
+    <string name="title_consulta">Consultar</string>
     <string name="title_login">Login</string>
     <string name="title_administrador">Administrador</string>
+    <string name="title_activity_tela_principal">TelaPrincipal</string>
 
     <!-- Strings dos botões do Menu -->
     <string name="menu_save">Salvar</string>
     <string name="menu_edit">Editar</string>
     <string name="menu_search">Pesquisar</string>
     <string name="menu_delete">Excluir</string>
+    <string name="menu_manga">Mangas</string>
+    <string name="menu_novel">Novels</string>
+
 
     <!-- Strings dos Labels das Activitys -->
     <string name="app_name">E-commerce</string>
-    <string name="string_nome">Nome*:</string>
+    <string name="string_nome">Nome:</string>
     <string name="string_cep">CEP:</string>
     <string name="string_cidade">Cidade:</string>
     <string name="string_pais">País:</string>
     <string name="string_estado">Estado:</string>
-    <string name="string_telefone">Telefone*:</string>
+    <string name="string_telefone">Telefone:</string>
     <string name="string_complemento">Complemento:</string>
-    <string name="string_valor">Valor*:</string>
-    <string name="string_quantidade">Quantidade*:</string>
+    <string name="string_valor">Valor:</string>
+    <string name="string_quantidade">Quantidade:</string>
     <string name="string_descricao">Descrição:</string>
 
-    <string name="title_activity_tela_principal">TelaPrincipal</string>
     <string name="string_login">Faça seu Login</string>
     <string name="string_cadastro">Ou faça seu cadastro.</string>
     <string name="string_email">E-mail</string>
@@ -35,8 +38,6 @@
     <string name="string_info_senha">Informe sua senha.</string>
     <string name="string_bt_login">Login</string>
     <string name="string_bt_cadastrar">Cadastrar</string>
-    <string name="string_nav_mangas">Mangas</string>
-    <string name="string_nav_novel">Light Novel</string>
     <string name="string_nav_action">Action Figure</string>
     <string name="string_rpt_senha">Repetir Senha</string>
     <string name="string_CPF">CPF</string>
@@ -56,6 +57,4 @@
     <string name="insira_sua_data_de_nascimento">Insira sua Data de Nascimento</string>
     <string name="listagem_dos_mangas">Listagem dos Mangas</string>
     <string name="listagem_das_novels">Listagem das Novels</string>
-
-    <string name="vazio">"</string>
 </resources>
