@@ -1,9 +1,4 @@
-package leonardo_matheus.e_commerce.Recycler;
-
-/**
- * Created by leoal on 24/09/2017.
- */
-
+package leonardo_matheus.e_commerce.Fragment;
 
 public class Manga {
     private String nome;

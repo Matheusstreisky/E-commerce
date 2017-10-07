@@ -5,9 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-/**
- * Created by Streisky on 04/10/2017.
- */
+
 
 public class CRUD_Produtos {
     private SQLiteDatabase db;

@@ -14,8 +14,8 @@
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_logout"
-                android:title="@string/string_nav_logout" />
+                android:id="@+id/nav_pdf"
+                android:title="@string/string_nav_pdf" />
 
         </menu>
     </item>

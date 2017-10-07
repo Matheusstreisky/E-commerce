@@ -10,18 +10,11 @@ import android.widget.TextView;
 import java.util.List;
 
 import leonardo_matheus.e_commerce.R;
-import leonardo_matheus.e_commerce.Recycler.Manga;
-
-/**
- * Created by leoal on 05/10/2017.
- */
 
 public class FragmentAdapter extends RecyclerView.Adapter<FragmentAdapter.MyViewHolder> {
-    private String[] mDataset;
     private List<Manga> mangaList;
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
-        //public TextView textNome;
 
         public TextView viewNome;
         public TextView viewAutor;
@@ -37,10 +30,6 @@ public class FragmentAdapter extends RecyclerView.Adapter<FragmentAdapter.MyView
 
         }
     }
-//
-//    public FragmentAdapter(String[] mDataset) {
-//        this.mDataset = mDataset;
-//    }
 
     public FragmentAdapter(List<Manga> mangaList) {
         this.mangaList = mangaList;

@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 
-import leonardo_matheus.e_commerce.Recycler.RecyclerMain;
+
 
 
 public class TelaLogin extends AppCompatActivity {
@@ -46,10 +46,8 @@ public class TelaLogin extends AppCompatActivity {
 
         Intent it;
         switch (id.getId()) {
-            case R.id.BT_Login:
-                it = new Intent(this, RecyclerMain.class);
-                startActivity(it);
-                break;
+//            case R.id.BT_Login:
+//                break;
             case R.id.BT_Cadastrar:
                 it = new Intent(this, CadastroPessoas.class);
                 startActivity(it);

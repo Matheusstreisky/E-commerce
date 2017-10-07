@@ -26,7 +26,7 @@
     <string name="string_quantidade">Quantidade*:</string>
     <string name="string_descricao">Descrição:</string>
 
-    <string name="title_activity_tela_principal">TelaPrincipal</string>
+    <string name="title_activity_tela_principal">E-Commerce</string>
     <string name="string_login">Faça seu Login</string>
     <string name="string_cadastro">Ou faça seu cadastro.</string>
     <string name="string_email">E-mail</string>
@@ -41,9 +41,11 @@
     <string name="string_rpt_senha">Repetir Senha</string>
     <string name="string_CPF">CPF</string>
     <string name="string_datNasc">Data de Nascimento</string>
-    <string name="string_nav_logout">Logout</string>
+    <string name="string_nav_pdf">PDF</string>
     <string name="string_rb_manga">Manga</string>
     <string name="string_rb_novel">Light Novel</string>
+    <string name="string_frag_abrir_pdf">Abrir PDF</string>
+    <string name="string_frag_downlaod">Dowload PDF</string>
 
     <string name="string_manga_nome">Nome</string>
     <string name="string_manga_autor">Autor</string>
@@ -58,4 +60,7 @@
     <string name="listagem_das_novels">Listagem das Novels</string>
 
     <string name="vazio">"</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

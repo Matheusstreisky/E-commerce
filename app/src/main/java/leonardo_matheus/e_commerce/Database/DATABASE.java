@@ -4,10 +4,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-/**
- * Created by Streisky on 18/09/2017.
- */
-
 public class DATABASE extends SQLiteOpenHelper {
     private static final String NOME_BANCO = "e_commerce";
     private static final int VERSAO_BANCO = 2;

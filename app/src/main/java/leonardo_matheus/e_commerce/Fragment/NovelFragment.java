@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import leonardo_matheus.e_commerce.R;
-import leonardo_matheus.e_commerce.Recycler.Manga;
 
 
 /**
@@ -50,14 +49,14 @@ public class NovelFragment extends Fragment {
 
 
     public List<Manga> setMangaList() {
-        String[] nome = new String[]{"Re:Zero", "Fullmetal Alchemist", "Hunter x Hunter", "Noragami", "Barakamon"
-                , "Evangelion", "No game No Life", "Katekyo Hitman Reborn", "Fate/Zero", "Nisekoi"};
-        String[] autor = new String[]{"Tappey Naqatsuki", "Hiromu Arakawa", "Yoshihiro Togashi", "Adachitoka", "Satsuki Yoshino",
-                "Hideaki Anno", "Yuu Kamiya", "Akira Amano", "Gen Urobuchi", "Naoshi Komi"};
-        int[] cover = new int[]{R.drawable.rezero, R.drawable.fma, R.drawable.hxh, R.drawable.noragami, R.drawable.barakamon
-                , R.drawable.eva, R.drawable.ngnl, R.drawable.khr, R.drawable.fate1, R.drawable.nise};
+        String[] nome = new String[]{"Re:Zero", "No game No Life", "Fate/Zero", "kono subarashii sekai ni shukufuku wo",
+                "Shakugan No Shana", "Toradora", "1 Litro de Lágrimas", "Another"};
+        String[] autor = new String[]{"Tappey Naqatsuki", "Yuu Kamiya", "Gen Urobuchi", "Natsume Akatsuki",
+                "Yashichiro Takahashi", "Yuyuko Takemiya", "Aya Kitou", "Yukito Ayatsuji"};
+        int[] cover = new int[]{R.drawable.rezero, R.drawable.ngnl,R.drawable.fate1, R.drawable.konosuba,
+                R.drawable.shana, R.drawable.toradora, R.drawable.ichi, R.drawable.another};
         List<Manga> mangas = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < nome.length; i++) {
             Manga manga = new Manga(nome[i % nome.length], autor[i % autor.length], cover[i % cover.length]);
             mangas.add(manga);
         }

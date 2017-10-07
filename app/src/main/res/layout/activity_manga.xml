@@ -65,6 +65,7 @@
                     tools:ignore="HardcodedText"
                     tools:text="@string/string_manga_autor" />
 
+
             </LinearLayout>
 
         </LinearLayout>

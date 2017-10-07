@@ -5,9 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-/**
- * Created by Streisky on 05/10/2017.
- */
 
 public class CRUD_Pessoas {
     private SQLiteDatabase db;
