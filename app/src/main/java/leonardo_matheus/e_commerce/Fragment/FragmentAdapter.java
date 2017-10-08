@@ -35,6 +35,7 @@ public class FragmentAdapter extends RecyclerView.Adapter<FragmentAdapter.MyView
         this.mangaList = mangaList;
     }
 
+    //Metodo de criaçao da RecyclerList
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_manga, parent, false);
@@ -42,7 +43,7 @@ public class FragmentAdapter extends RecyclerView.Adapter<FragmentAdapter.MyView
 
         return viewHolder;
     }
-
+    //Este metodo seta os itens que irão aparecer na tela
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
