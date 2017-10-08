@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import leonardo_matheus.e_commerce.Database.CRUD_Fornecedores;
+import leonardo_matheus.e_commerce.Database.CRUD_Pessoas;
 import leonardo_matheus.e_commerce.Database.CRUD_Produtos;
 import leonardo_matheus.e_commerce.Database.DATABASE;
 
@@ -42,71 +43,94 @@ public class Consulta extends AppCompatActivity {
         array.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         selecionado.setAdapter(array);
 
-        selecionado.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        selecionado.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                final Cursor cursor;
+                String[] campos;
+                int[] idViews;
+                SimpleCursorAdapter adapter;
 
                 switch (i) {
                     case 0:
+                        CRUD_Fornecedores crud_fornecedores = new CRUD_Fornecedores(getBaseContext());
+                        cursor = crud_fornecedores.consultarDados();
+                        campos = new String[] {DATABASE.COLUNA_ID, DATABASE.COLUNA_NOME};
+                        idViews = new int[] {R.id.idItens, R.id.nomeItens};
+
+                        adapter = new SimpleCursorAdapter(getBaseContext(), R.layout.consulta_itens, cursor, campos, idViews, 0);
+                        listView = (ListView) findViewById(R.id.listView);
+                        listView.setAdapter(adapter);
+
+                        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                                cursor.moveToPosition(i);
+                                String codigo = cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_ID));
+                                Intent intent = new Intent(Consulta.this, Visualizar.class);
+                                intent.putExtra("codigo", codigo);
+                                intent.putExtra("tela", "fornecedor");
+                                startActivity(intent);
+                                finish();
+                            }
+                        });
                         break;
                     case 1:
+                        CRUD_Produtos crud_produtos = new CRUD_Produtos(getBaseContext());
+                        cursor = crud_produtos.consultarDados();
+                        campos = new String[] {DATABASE.COLUNA_ID, DATABASE.COLUNA_NOME};
+                        idViews = new int[] {R.id.idItens, R.id.nomeItens};
+
+                        adapter = new SimpleCursorAdapter(getBaseContext(), R.layout.consulta_itens, cursor, campos, idViews, 0);
+                        listView = (ListView) findViewById(R.id.listView);
+                        listView.setAdapter(adapter);
+
+                        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                                cursor.moveToPosition(i);
+                                String codigo = cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_ID));
+                                Intent intent = new Intent(Consulta.this, Visualizar.class);
+                                intent.putExtra("codigo", codigo);
+                                intent.putExtra("tela", "produto");
+                                startActivity(intent);
+                                finish();
+                            }
+                        });
                         break;
                     case 2:
+                        CRUD_Pessoas crud_pessoas = new CRUD_Pessoas(getBaseContext());
+                        cursor = crud_pessoas.consultarDados();
+                        campos = new String[] {DATABASE.COLUNA_ID, DATABASE.COLUNA_NOME};
+                        idViews = new int[] {R.id.idItens, R.id.nomeItens};
+
+                        adapter = new SimpleCursorAdapter(getBaseContext(), R.layout.consulta_itens, cursor, campos, idViews, 0);
+                        listView = (ListView) findViewById(R.id.listView);
+                        listView.setAdapter(adapter);
+
+                        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                                cursor.moveToPosition(i);
+                                String codigo = cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_ID));
+                                Intent intent = new Intent(Consulta.this, Visualizar.class);
+                                intent.putExtra("codigo", codigo);
+                                intent.putExtra("tela", "pessoa");
+                                startActivity(intent);
+                                finish();
+                            }
+                        });
                         break;
                     default:
                         break;
                 }
             }
-        });
 
-
-        CRUD_Fornecedores crud = new CRUD_Fornecedores(getBaseContext());
-        final Cursor cursor = crud.consultarDados();
-
-        String[] campos = new String[] {DATABASE.COLUNA_ID, DATABASE.COLUNA_NOME};
-        int[] idViews = new int[] {R.id.idLivro, R.id.nomeLivro};
-
-        SimpleCursorAdapter adapter = new SimpleCursorAdapter(getBaseContext(), R.layout.consulta_itens, cursor, campos, idViews, 0);
-        listView = (ListView) findViewById(R.id.listView);
-        listView.setAdapter(adapter);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                cursor.moveToPosition(i);
-                String codigo = cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_ID));
-                Intent intent = new Intent(Consulta.this, Visualizar.class);
-                intent.putExtra("codigo", codigo);
-                intent.putExtra("tela", "fornecedor");
-                startActivity(intent);
-                finish();
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
             }
         });
-
-        /*
-        CRUD_Produtos crud = new CRUD_Produtos(getBaseContext());
-        final Cursor cursor = crud.consultarDados();
-
-        String[] campos = new String[] {DATABASE.COLUNA_ID, DATABASE.COLUNA_NOME};
-        int[] idViews = new int[] {R.id.idLivro, R.id.nomeLivro};
-
-        SimpleCursorAdapter adapter = new SimpleCursorAdapter(getBaseContext(), R.layout.consulta_itens, cursor, campos, idViews, 0);
-        listView = (ListView) findViewById(R.id.listView);
-        listView.setAdapter(adapter);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                cursor.moveToPosition(i);
-                String codigo = cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_ID));
-                Intent intent = new Intent(Consulta.this, Visualizar.class);
-                intent.putExtra("codigo", codigo);
-                intent.putExtra("tela", "produto");
-                startActivity(intent);
-                finish();
-            }
-        });
-        */
     }
 
     @Override

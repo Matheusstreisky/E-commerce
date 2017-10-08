@@ -1,9 +1,5 @@
 package leonardo_matheus.e_commerce.Database;
 
-/**
- * Created by Streisky on 18/09/2017.
- */
-
 public class Fornecedores {
     private int id;
     private String Nome;

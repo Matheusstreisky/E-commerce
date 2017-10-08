@@ -4,10 +4,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-/**
- * Created by Streisky on 18/09/2017.
- */
-
 public class DATABASE extends SQLiteOpenHelper {
     private static final String NOME_BANCO = "e_commerce";
     private static final int VERSAO_BANCO = 2;
@@ -34,7 +30,7 @@ public class DATABASE extends SQLiteOpenHelper {
     public static final String COLUNA_SENHA = "senha";
 
     // Comandos SQL
-    public static final String TABLE_FORNECEDORES =
+    private static final String TABLE_FORNECEDORES =
             "CREATE TABLE " + TABELA_FORNECEDORES + " ("
                     + COLUNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + COLUNA_NOME+ " TEXT NOT NULL,"
@@ -45,7 +41,7 @@ public class DATABASE extends SQLiteOpenHelper {
                     + COLUNA_TELEFONE+ " TEXT NOT NULL,"
                     + COLUNA_COMPLEMENTO+ " TEXT"
                     + ")";
-    public static final String TABLE_PRODUTOS =
+    private static final String TABLE_PRODUTOS =
             "CREATE TABLE " + TABELA_PRODUTOS + " ("
                     + COLUNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + COLUNA_NOME + " TEXT NOT NULL,"
@@ -53,14 +49,18 @@ public class DATABASE extends SQLiteOpenHelper {
                     + COLUNA_QUANTIDADE + " INTEGER NOT NULL,"
                     + COLUNA_DESCRICAO + " TEXT"
                     + ");";
-    public static final String TABLE_PESSOAS =
+    private static final String TABLE_PESSOAS =
             "CREATE TABLE " + TABELA_PESSOAS + " ("
                     + COLUNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + COLUNA_NOME + " TEXT NOT NULL,"
+                    + COLUNA_SENHA + " TEXT NOT NULL,"
                     + COLUNA_CPF + " TEXT NOT NULL,"
-                    + COLUNA_DATANASCIMENTO + " TEXT NOT NULL,"
-                    + COLUNA_SENHA + " TEXT NOT NULL"
+                    + COLUNA_DATANASCIMENTO + " TEXT NOT NULL"
                     + ");";
+    private static final String INSERT_ADM = "INSERT INTO "
+            + TABELA_PESSOAS + " ("+COLUNA_NOME+", "+COLUNA_SENHA+", "+COLUNA_CPF+", "+COLUNA_DATANASCIMENTO+")" +
+            " VALUES('admin', 'admin', '000.000.000-00', '00-00-00');";
+
 
 
     public DATABASE(Context context) {
@@ -72,6 +72,7 @@ public class DATABASE extends SQLiteOpenHelper {
         db.execSQL(TABLE_FORNECEDORES);
         db.execSQL(TABLE_PRODUTOS);
         db.execSQL(TABLE_PESSOAS);
+        db.execSQL(INSERT_ADM);
     }
 
     @Override

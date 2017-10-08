@@ -6,21 +6,21 @@
     android:rowCount="2" >
 
     <TextView
-        android:id="@+id/idLivro"
+        android:id="@+id/idItens"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
-        android:text="ID"
+        android:text="@string/title_id_itens"
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/nomeLivro"
+        android:id="@+id/nomeItens"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
-        android:text="TITULO"
+        android:text="@string/title_nome_itens"
         android:textSize="20sp" />
 
 </GridLayout>

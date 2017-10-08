@@ -1,21 +1,18 @@
 package leonardo_matheus.e_commerce.Database;
 
-/**
- * Created by Streisky on 05/10/2017.
- */
 
 public class Pessoas {
     private int id;
     private String Nome;
+    private String Senha;
     private String CPF;
     private String DataNascimento;
-    private String Senha;
 
-    public Pessoas(String nome, String CPF, String dataNascimento, String senha) {
+    public Pessoas(String nome, String senha, String CPF, String dataNascimento) {
         setNome(nome);
-        this.setCPF(CPF);
-        setDataNascimento(dataNascimento);
         setSenha(senha);
+        setCPF(CPF);
+        setDataNascimento(dataNascimento);
     }
 
 
@@ -35,6 +32,14 @@ public class Pessoas {
         Nome = nome;
     }
 
+    public String getSenha() {
+        return Senha;
+    }
+
+    public void setSenha(String senha) {
+        Senha = senha;
+    }
+
     public String getCPF() {
         return CPF;
     }
@@ -49,13 +54,5 @@ public class Pessoas {
 
     public void setDataNascimento(String dataNascimento) {
         DataNascimento = dataNascimento;
-    }
-
-    public String getSenha() {
-        return Senha;
-    }
-
-    public void setSenha(String senha) {
-        Senha = senha;
     }
 }

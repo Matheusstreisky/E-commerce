@@ -64,7 +64,7 @@ public class CadastroProdutos extends AppCompatActivity {
             case R.id.button_search:
                 break;
             case R.id.button_save:
-                if(!nome.getText().toString().equals("") && !valor.getText().toString().equals("") && !quantidade.getText().toString().equals("")) {
+                if(!nome.getText().toString().isEmpty() && !valor.getText().toString().isEmpty() && !quantidade.getText().toString().isEmpty()) {
                     String resultado;
 
                     if(!this.getIntent().hasExtra("codigo"))

@@ -13,8 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import leonardo_matheus.e_commerce.R;
-import leonardo_matheus.e_commerce.Recycler.Manga;
-import leonardo_matheus.e_commerce.Recycler.RecyclerAdapter;
 
 
 /**
@@ -32,6 +30,7 @@ public class MangaFragment extends Fragment {
 
     }
 
+    //Neste metodo sera "inflado" o fragment com o as caracteristicas do RecyclerView
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -51,14 +50,14 @@ public class MangaFragment extends Fragment {
 
 
     public List<Manga> setMangaList() {
-        String[] nome = new String[]{"Re:Zero", "Fullmetal Alchemist", "Hunter x Hunter", "Noragami", "Barakamon"
-                , "Evangelion", "No game No Life", "Katekyo Hitman Reborn", "Fate/Zero", "Nisekoi"};
-        String[] autor = new String[]{"Tappey Naqatsuki", "Hiromu Arakawa", "Yoshihiro Togashi", "Adachitoka", "Satsuki Yoshino",
-                "Hideaki Anno", "Yuu Kamiya", "Akira Amano", "Gen Urobuchi", "Naoshi Komi"};
-        int[] cover = new int[]{R.drawable.rezero, R.drawable.fma, R.drawable.hxh, R.drawable.noragami, R.drawable.barakamon
-                , R.drawable.eva, R.drawable.ngnl, R.drawable.khr, R.drawable.fate1, R.drawable.nise};
+        String[] nome = new String[]{"Fullmetal Alchemist", "Hunter x Hunter", "Noragami", "Barakamon"
+                , "Evangelion", "Katekyo Hitman Reborn", "Nisekoi", "K-On!"};
+        String[] autor = new String[]{"Hiromu Arakawa", "Yoshihiro Togashi", "Adachitoka", "Satsuki Yoshino",
+                "Hideaki Anno", "Akira Amano", "Naoshi Komi", "Kakifly"};
+        int[] cover = new int[]{R.drawable.fma, R.drawable.hxh, R.drawable.noragami, R.drawable.barakamon
+                , R.drawable.eva,  R.drawable.khr, R.drawable.nise, R.drawable.kon};
         List<Manga> mangas = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < nome.length; i++) {
             Manga manga = new Manga(nome[i % nome.length], autor[i % autor.length], cover[i % cover.length]);
             mangas.add(manga);
         }

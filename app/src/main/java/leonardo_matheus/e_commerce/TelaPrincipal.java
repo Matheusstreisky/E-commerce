@@ -1,6 +1,7 @@
 package leonardo_matheus.e_commerce;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -83,21 +84,27 @@ public class TelaPrincipal extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
+        //Nos dois primeiros if's sao responsaveis pela porjecao dos fragments referentes aos produtos
         if (id == R.id.nav_manga) {
             android.app.FragmentManager fragmentManager = getFragmentManager();
             android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             MangaFragment mangaFragment = new MangaFragment();
-            fragmentTransaction.replace(R.id.frameTeste,mangaFragment);
+            fragmentTransaction.replace(R.id.frameTeste, mangaFragment);
             fragmentTransaction.commit();
-//        Intent it = new Intent(this, RecyclerMain.class);
-//            startActivity(it);
+
 
         } else if (id == R.id.nav_novel) {
             android.app.FragmentManager fragmentManager = getFragmentManager();
             android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             NovelFragment novelFragment = new NovelFragment();
-            fragmentTransaction.replace(R.id.frameTeste,novelFragment);
+            fragmentTransaction.replace(R.id.frameTeste, novelFragment);
             fragmentTransaction.commit();
+        } else if (id == R.id.nav_pdf) {
+            Intent i = new Intent(this, PDF.class);
+            startActivity(i);
+        } else if (id == R.id.nav_adm) {
+            Intent i = new Intent(this, TelaAdm.class);
+            startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

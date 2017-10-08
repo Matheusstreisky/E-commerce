@@ -28,7 +28,7 @@ public class Visualizar extends AppCompatActivity {
 
         // Seta toolbar como actionBar na tela
         Toolbar myToolbar = (Toolbar) findViewById(R.id.ToolbarMenu);
-        myToolbar.setTitle(R.string.title_fornecedor);
+        myToolbar.setTitle(R.string.title_detalhes);
         setSupportActionBar(myToolbar);
 
         Cursor cursor;

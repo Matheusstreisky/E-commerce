@@ -5,9 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-/**
- * Created by Streisky on 05/10/2017.
- */
 
 public class CRUD_Pessoas {
     private SQLiteDatabase db;
@@ -18,14 +15,14 @@ public class CRUD_Pessoas {
         DATABASE = new DATABASE(context);
     }
 
-    public String inserirDados(String nome, String cpf, int datanascimento, String senha) {
+    public String inserirDados(String nome, String senha, String cpf, String datanascimento) {
         db = DATABASE.getWritableDatabase();
         ContentValues valores = new ContentValues();
 
         valores.put(DATABASE.COLUNA_NOME, nome);
+        valores.put(DATABASE.COLUNA_SENHA, senha);
         valores.put(DATABASE.COLUNA_CPF, cpf);
         valores.put(DATABASE.COLUNA_DATANASCIMENTO, datanascimento);
-        valores.put(DATABASE.COLUNA_DESCRICAO, senha);
 
         long resultado = db.insert(DATABASE.TABELA_PESSOAS, null, valores);
         db.close();
@@ -36,14 +33,14 @@ public class CRUD_Pessoas {
             return "Registro cadastrado com sucesso!";
     }
 
-    public String alterarDados(int id, String nome, String cpf, int datanascimento, String senha) {
+    public String alterarDados(int id, String nome, String senha, String cpf, String datanascimento) {
         db = DATABASE.getWritableDatabase();
         ContentValues valores = new ContentValues();
 
         valores.put(DATABASE.COLUNA_NOME, nome);
+        valores.put(DATABASE.COLUNA_SENHA, senha);
         valores.put(DATABASE.COLUNA_CPF, cpf);
         valores.put(DATABASE.COLUNA_DATANASCIMENTO, datanascimento);
-        valores.put(DATABASE.COLUNA_DESCRICAO, senha);
         String where = DATABASE.COLUNA_ID + "=" + id;
 
         long resultado = db.update(DATABASE.TABELA_PESSOAS, valores, where, null);
@@ -68,7 +65,7 @@ public class CRUD_Pessoas {
     }
 
     public Cursor consultarDados() {
-        String[] campos = {DATABASE.COLUNA_ID, DATABASE.COLUNA_NOME, DATABASE.COLUNA_CPF, DATABASE.COLUNA_DATANASCIMENTO, DATABASE.COLUNA_SENHA};
+        String[] campos = {DATABASE.COLUNA_ID, DATABASE.COLUNA_NOME, DATABASE.COLUNA_SENHA, DATABASE.COLUNA_CPF, DATABASE.COLUNA_DATANASCIMENTO};
         db = DATABASE.getReadableDatabase();
         cursor = db.query(DATABASE.TABELA_PESSOAS, campos, null, null, null, null, null, null);
 
@@ -80,10 +77,10 @@ public class CRUD_Pessoas {
     }
 
     public Cursor carregarDados(int id) {
-        String[] campos = {DATABASE.COLUNA_ID, DATABASE.COLUNA_NOME, DATABASE.COLUNA_CPF, DATABASE.COLUNA_DATANASCIMENTO, DATABASE.COLUNA_SENHA};
+        String[] campos = {DATABASE.COLUNA_ID, DATABASE.COLUNA_SENHA, DATABASE.COLUNA_NOME, DATABASE.COLUNA_CPF, DATABASE.COLUNA_DATANASCIMENTO};
         String where = DATABASE.COLUNA_ID + "=" + id;
         db = DATABASE.getReadableDatabase();
-        cursor = db.query(DATABASE.TABELA_PRODUTOS, campos, where, null, null, null, null, null);
+        cursor = db.query(DATABASE.TABELA_PESSOAS, campos, where, null, null, null, null, null);
 
         if(cursor != null)
             cursor.moveToFirst();
