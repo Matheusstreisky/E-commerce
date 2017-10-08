@@ -26,15 +26,16 @@
         android:layout_alignStart="@+id/button"
         android:layout_below="@+id/button"
         android:layout_marginTop="55dp"
-        android:text="Produtos" />
+        android:text="Produtos"
+        android:layout_alignEnd="@+id/button" />
 
     <Button
         android:id="@+id/btConsulta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button2"
-        android:layout_marginStart="59dp"
-        android:layout_marginTop="20dp"
+        android:layout_alignBaseline="@+id/button2"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_marginStart="54dp"
         android:layout_toEndOf="@+id/button"
         android:text="Consulta" />
 
@@ -44,6 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/btConsulta"
         android:layout_alignTop="@+id/button"
-        android:text="Pessoa" />
+        android:text="Pessoa"
+        android:layout_alignEnd="@+id/btConsulta" />
 
 </RelativeLayout>

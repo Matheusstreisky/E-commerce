@@ -23,12 +23,14 @@ public class PDF extends AppCompatActivity {
 
         Intent it;
         switch (id.getId()) {
+            //Neste case, te redirecionar para uma pasta no Google Drive em que se encontrar um pdf para download
             case R.id.frag_bt_Download:
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW,
                         Uri.parse("https://drive.google.com/drive/folders/0B2j8Tcz4GW5-UHp6RWxDcU5pYlU?usp=sharing"));
                 startActivity(browserIntent);
                 break;
-
+            //Neste case ele irá abrir o pdf que se encontra na pasta Download e ira utilizar o leitor
+            //nativo de PDF do Androir.
             case R.id.frag_bt_Abrir_PDF:
                 File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "aps.pdf");
                 Uri path = Uri.fromFile(file);
