@@ -80,6 +80,8 @@ public class Visualizar extends AppCompatActivity {
             rotulos = (TextView) findViewById(R.id.TV_Campo3);
             rotulos.setText(R.string.string_quantidade);
             rotulos = (TextView) findViewById(R.id.TV_Campo4);
+            rotulos.setText(R.string.string_tipo);
+            rotulos = (TextView) findViewById(R.id.TV_Campo5);
             rotulos.setText(R.string.string_descricao);
 
             rotulos = (TextView) findViewById(R.id.ET_Campo1);
@@ -89,6 +91,8 @@ public class Visualizar extends AppCompatActivity {
             rotulos = (TextView) findViewById(R.id.ET_Campo3);
             rotulos.setText(cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_QUANTIDADE)));
             rotulos = (TextView) findViewById(R.id.ET_Campo4);
+            rotulos.setText(cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_TIPO)));
+            rotulos = (TextView) findViewById(R.id.ET_Campo5);
             rotulos.setText(cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_DESCRICAO)));
         }
         else if(this.getIntent().getStringExtra("tela").equals("pessoa")) {

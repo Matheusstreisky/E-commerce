@@ -30,6 +30,7 @@
     <string name="string_complemento">Complemento:</string>
     <string name="string_valor">Valor:</string>
     <string name="string_quantidade">Quantidade:</string>
+    <string name="string_tipo">Tipo:</string>
     <string name="string_descricao">Descrição:</string>
     <string name="string_senha">Senha:</string>
     <string name="string_rpt_senha">Repetir Senha:</string>

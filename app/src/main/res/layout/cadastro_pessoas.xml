@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_marginTop="25dp"
             android:text="@string/string_nome"
             tools:ignore="HardcodedText,MissingConstraints,RtlHardcoded"
             tools:layout_editor_absoluteX="8dp"

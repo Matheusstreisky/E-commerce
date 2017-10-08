@@ -70,11 +70,29 @@
         android:inputType="numberDecimal" />
 
     <TextView
+        android:id="@+id/TV_Tipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ET_Quantidade"
+        android:layout_marginTop="25dp"
+        android:text="@string/string_tipo"/>
+
+    <Spinner
+        android:id="@+id/SP_Tipo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/TV_Tipo"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/ET_Quantidade"
+        style="@style/spinner_style" />
+
+    <TextView
         android:id="@+id/TV_Descricao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/ET_Quantidade"
+        android:layout_below="@+id/SP_Tipo"
         android:layout_marginTop="25dp"
         android:text="@string/string_descricao" />
 

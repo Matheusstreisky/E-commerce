@@ -104,8 +104,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/TV_Estado"
         android:layout_marginTop="5dp"
-        android:layout_alignBottom="@+id/ET_Pais"
         android:layout_alignParentEnd="true"
+        style="@style/spinner_style"
         android:layout_alignStart="@+id/ET_Cidade" />
 
     <TextView

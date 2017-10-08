@@ -9,12 +9,14 @@ public class Produtos {
     private String Nome;
     private double Valor;
     private int Quantidade;
+    private String Tipo;
     private String Descricao;
 
-    public Produtos(String nome, double valor, int quantidade, String descricao) {
+    public Produtos(String nome, double valor, int quantidade, String tipo, String descricao) {
         setNome(nome);
         setValor(valor);
         setQuantidade(quantidade);
+        setTipo(tipo);
         setDescricao(descricao);
     }
 
@@ -49,6 +51,14 @@ public class Produtos {
 
     public void setQuantidade(int quantidade) {
         Quantidade = quantidade;
+    }
+
+    public String getTipo() {
+        return Tipo;
+    }
+
+    public void setTipo(String tipo) {
+        Tipo = tipo;
     }
 
     public String getDescricao() {

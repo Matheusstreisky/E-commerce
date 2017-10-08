@@ -6,8 +6,13 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import leonardo_matheus.e_commerce.Database.CRUD_Produtos;
 import leonardo_matheus.e_commerce.Database.DATABASE;
@@ -17,6 +22,7 @@ public class CadastroProdutos extends AppCompatActivity {
     private Produtos produtos;
     private int codigo;
     private EditText nome, valor, quantidade, descricao;
+    private Spinner tipo;
     private CRUD_Produtos crud;
     private Cursor cursor;
 
@@ -32,7 +38,14 @@ public class CadastroProdutos extends AppCompatActivity {
         nome = (EditText) findViewById(R.id.ET_Nome);
         valor = (EditText) findViewById(R.id.ET_Valor);
         quantidade = (EditText) findViewById(R.id.ET_Quantidade);
+        tipo = (Spinner) findViewById(R.id.SP_Tipo);
         descricao = (EditText) findViewById(R.id.ET_Descricao);
+
+        // Seta o spinner com os determinados valores
+        ArrayList<String> tipos = new ArrayList<>(Arrays.asList("Manga", "Light Novel"));
+        ArrayAdapter<String> array = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tipos);
+        array.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        tipo.setAdapter(array);
 
         crud = new CRUD_Produtos(getBaseContext());
         if(this.getIntent().hasExtra("codigo")) {
@@ -69,10 +82,10 @@ public class CadastroProdutos extends AppCompatActivity {
 
                     if(!this.getIntent().hasExtra("codigo"))
                         resultado = crud.inserirDados(nome.getText().toString(), Double.parseDouble(valor.getText().toString()),
-                                Integer.parseInt(quantidade.getText().toString()), descricao.getText().toString());
+                                Integer.parseInt(quantidade.getText().toString()), tipo.getSelectedItem().toString(), descricao.getText().toString());
                     else
                         resultado = crud.alterarDados(codigo, nome.getText().toString(), Double.parseDouble(valor.getText().toString()),
-                                Integer.parseInt(quantidade.getText().toString()), descricao.getText().toString());
+                                Integer.parseInt(quantidade.getText().toString()), tipo.getSelectedItem().toString(), descricao.getText().toString());
 
                     Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
                     finish();

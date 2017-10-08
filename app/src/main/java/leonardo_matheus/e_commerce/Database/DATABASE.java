@@ -24,7 +24,9 @@ public class DATABASE extends SQLiteOpenHelper {
     public static final String COLUNA_COMPLEMENTO = "complemento";
     public static final String COLUNA_VALOR = "valor";
     public static final String COLUNA_QUANTIDADE = "quantidade";
+    public static final String COLUNA_TIPO = "tipo";
     public static final String COLUNA_DESCRICAO = "descricao";
+    public static final String COLUNA_IMAGEM = "imagem";
     public static final String COLUNA_CPF = "cpf";
     public static final String COLUNA_DATANASCIMENTO = "datanascimento";
     public static final String COLUNA_SENHA = "senha";
@@ -47,7 +49,9 @@ public class DATABASE extends SQLiteOpenHelper {
                     + COLUNA_NOME + " TEXT NOT NULL,"
                     + COLUNA_VALOR + " DOUBLE NOT NULL,"
                     + COLUNA_QUANTIDADE + " INTEGER NOT NULL,"
-                    + COLUNA_DESCRICAO + " TEXT"
+                    + COLUNA_TIPO + " TEXT NOT NULL,"
+                    + COLUNA_DESCRICAO + " TEXT,"
+                    + COLUNA_IMAGEM + " BLOB"
                     + ");";
     private static final String TABLE_PESSOAS =
             "CREATE TABLE " + TABELA_PESSOAS + " ("
