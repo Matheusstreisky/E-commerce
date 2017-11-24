@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">E-commerce</string>
     <string name="menu_communicate">Comunicação</string>
-    <string name="action_settings">Configuração</string>
+    <string name="insira_seu_cpf">Insira seu CPF</string>
+    <string name="insira_sua_data_de_nascimento">Insira sua Data de Nascimento</string>
+    <string name="listagem_das_novels">Listagem das Novels</string>
+    <string name="listagem_dos_mangas">Listagem dos Mangas</string>
+    <string name="menu_delete">Excluir</string>
+    <string name="menu_edit">Editar</string>
+    <string name="menu_save">Salvar</string>
+    <string name="menu_search">Pesquisar</string>
+    <string name="string_bt_cadastrar">Cadastrar</string>
+    <string name="string_cadastro">Ou faça seu cadastro.</string>
+    <string name="string_cidade">Cidade:</string>
+    <string name="string_cep">CEP:</string>
+    <string name="string_complemento">Complemento:</string>
+    <string name="string_datNasc">Data de Nascimento:</string>
+    <string name="string_descricao">Descrição:</string>
+    <string name="string_estado">Estado:</string>
+    <string name="string_frag_abrir_pdf">Abrir PDF</string>
+    <string name="string_info_email">Informe seu E-mail.</string>
+    <string name="string_info_senha">Informe sua senha.</string>
+    <string name="string_login">Faça seu Login</string>
+    <string name="string_manga_autor">Autor</string>
+    <string name="string_manga_nome">Nome</string>
+    <string name="string_nav_sac">Fale conosco</string>
+    <string name="string_quantidade">Quantidade:</string>
+    <string name="string_rpt_senha">Repetir Senha:</string>
+    <string name="string_selecione">Selecione:</string>
+    <string name="string_senha">Senha:</string>
+    <string name="string_telefone">Telefone:</string>
+    <string name="string_tipo">Tipo:</string>
+    <string name="string_valor">Valor:</string>
+    <string name="title_administrador">Administrador</string>
+    <string name="title_consulta">Consultar</string>
+    <string name="title_detalhes">Detalhes</string>
+    <string name="title_fornecedor">Fornecedores</string>
+    <string name="title_nome_itens">NOME</string>
+    <string name="title_pessoa">Pessoas</string>
+    <string name="title_produto">Produtos</string>
+    <string name="string_nome">Nome:</string>
+    <string name="string_pais">País:</string>
 </resources>
