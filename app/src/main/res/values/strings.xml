@@ -4,9 +4,9 @@
     <string name="title_produto">Produtos</string>
     <string name="title_pessoa">Pessoas</string>
     <string name="title_consulta">Consultar</string>
-    <string name="title_login">Login</string>
+    <string name="title_login" translatable="false">Login</string>
     <string name="title_administrador">Administrador</string>
-    <string name="title_activity_tela_principal">E-Commerce</string>
+    <string name="title_activity_tela_principal" translatable="false">E-Commerce</string>
     <string name="title_detalhes">Detalhes</string>
 
     <!-- Strings dos botões do Menu -->
@@ -20,7 +20,7 @@
     <string name="menu_communicate">Communicate</string>
 
     <!-- Strings dos Labels das Activitys -->
-    <string name="app_name">E-commerce</string>
+    <string name="app_name" translatable="false">E-commerce</string>
     <string name="string_nome">Nome:</string>
     <string name="string_cep">CEP:</string>
     <string name="string_cidade">Cidade:</string>
@@ -40,17 +40,18 @@
 
     <string name="string_login">Faça seu Login</string>
     <string name="string_cadastro">Ou faça seu cadastro.</string>
-    <string name="string_email">E-mail</string>
+    <string name="string_email" translatable="false">E-mail</string>
     <string name="string_info_email">Informe seu E-mail.</string>
     <string name="string_info_senha">Informe sua senha.</string>
-    <string name="string_bt_login">Login</string>
+    <string name="string_bt_login" translatable="false">Login</string>
     <string name="string_bt_cadastrar">Cadastrar</string>
-    <string name="string_nav_action">Action Figure</string>
-    <string name="string_nav_logout">Logout</string>
-    <string name="string_rb_manga">Manga</string>
-    <string name="string_rb_novel">Light Novel</string>
+    <string name="string_nav_action" translatable="false">Action Figure</string>
+    <string name="string_nav_logout" translatable="false">Logout</string>
+    <string name="string_nav_sac">Fale conosco</string>
+    <string name="string_rb_manga" translatable="false">Manga</string>
+    <string name="string_rb_novel" translatable="false">Light Novel</string>
     <string name="string_frag_abrir_pdf">Abrir PDF</string>
-    <string name="string_frag_downlaod">Dowload PDF</string>
+    <string name="string_frag_downlaod" translatable="false">Dowload PDF</string>
     <string name="string_manga_nome">Nome</string>
     <string name="string_manga_autor">Autor</string>
 
@@ -66,4 +67,10 @@
 
     <string name="title_id_itens">ID</string>
     <string name="title_nome_itens">NOME</string>
+
+
+    <!--Strings do Facebook-->
+    <string name="facebook_app_id">289496978230024</string>
+    <string name="fb_login_protocol_scheme">fb289496978230024</string>
+
 </resources>

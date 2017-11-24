@@ -17,7 +17,7 @@ public class CadastroPessoas extends AppCompatActivity {
 
     private Pessoas pessoas;
     private int codigo;
-    private EditText nome, senha,rpt_senha, cpf, datanasc;
+    private EditText nome, senha, rpt_senha, cpf, datanasc;
     private CRUD_Pessoas crud;
     private Cursor cursor;
 
@@ -27,7 +27,7 @@ public class CadastroPessoas extends AppCompatActivity {
         setContentView(R.layout.cadastro_pessoas);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.ToolbarMenu);
-        myToolbar.setTitle(R.string.title_produto);
+        myToolbar.setTitle(R.string.title_login);
         setSupportActionBar(myToolbar);
 
         nome = (EditText) findViewById(R.id.editNome);
@@ -37,7 +37,7 @@ public class CadastroPessoas extends AppCompatActivity {
         datanasc = (EditText) findViewById(R.id.editNascimento);
 
         crud = new CRUD_Pessoas(getBaseContext());
-        if(this.getIntent().hasExtra("codigo")) {
+        if (this.getIntent().hasExtra("codigo")) {
             codigo = Integer.parseInt(this.getIntent().getStringExtra("codigo"));
             cursor = crud.carregarDados(codigo);
 
@@ -66,9 +66,9 @@ public class CadastroPessoas extends AppCompatActivity {
             case R.id.button_search:
                 break;
             case R.id.button_save:
-                if(!nome.getText().toString().isEmpty() && !senha.getText().toString().isEmpty() && !rpt_senha.getText().toString().isEmpty()
+                if (!nome.getText().toString().isEmpty() && !senha.getText().toString().isEmpty() && !rpt_senha.getText().toString().isEmpty()
                         && !cpf.getText().toString().isEmpty() && !datanasc.getText().toString().isEmpty()) {
-                    if(senha.getText().toString().equals(rpt_senha.getText().toString())) {
+                    if (senha.getText().toString().equals(rpt_senha.getText().toString())) {
                         String resultado;
 
                         if (!this.getIntent().hasExtra("codigo"))
@@ -80,11 +80,10 @@ public class CadastroPessoas extends AppCompatActivity {
 
                         Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
                         finish();
-                    }
-                    else
+                    } else
                         Toast.makeText(getApplicationContext(), "Senhas não conferem!", Toast.LENGTH_SHORT).show();
-                }
-                else
+
+                } else
                     Toast.makeText(getApplicationContext(), "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button_edit:

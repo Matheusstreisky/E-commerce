@@ -7,17 +7,46 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
 
-
+import static com.facebook.login.LoginManager.*;
 
 
 public class TelaLogin extends AppCompatActivity {
+    EditText email;
+    EditText password;
+    String sMail, sPassword;
+    CallbackManager callbackManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela_login);
+        callbackManager = CallbackManager.Factory.create();
+        getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+
+            }
+        });
+
 
         // Seta toolbar como actionBar na tela
         Toolbar myToolbar = (Toolbar) findViewById(R.id.ToolbarMenu);

@@ -1,6 +1,5 @@
 package leonardo_matheus.e_commerce.Fragment;
 
-
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,17 +7,19 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import leonardo_matheus.e_commerce.Interface.onClickListener;
 import leonardo_matheus.e_commerce.R;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MangaFragment extends Fragment {
+public class MangaFragment extends Fragment implements onClickListener {
     public MangaFragment() {
         // Required empty public constructor
     }
@@ -44,6 +45,7 @@ public class MangaFragment extends Fragment {
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(llm);
 
+        adapter.setOnClickListener(this);
 
         return rootView;
     }
@@ -61,6 +63,12 @@ public class MangaFragment extends Fragment {
             Manga manga = new Manga(nome[i % nome.length], autor[i % autor.length], cover[i % cover.length]);
             mangas.add(manga);
         }
+
         return (mangas);
+    }
+
+    @Override
+    public void onClickListener(View view, int position) {
+        Toast.makeText(getActivity(),"Position"+position, Toast.LENGTH_SHORT).show();
     }
 }
