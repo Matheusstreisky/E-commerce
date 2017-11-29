@@ -11,6 +11,14 @@
         app:showAsAction="always" />
 
     <item
+        android:id="@+id/button_carrinho"
+        android:orderInCategory="150"
+        android:title="@string/menu_carrinho"
+        android:icon="@drawable/ic_shopping_cart"
+        app:showAsAction="always"
+        />
+
+    <item
         android:id="@+id/button_save"
         android:orderInCategory="200"
         android:title="@string/menu_save"

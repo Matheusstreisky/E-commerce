@@ -9,6 +9,8 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.nio.file.Files;
+
 import leonardo_matheus.e_commerce.Database.CRUD_Pessoas;
 import leonardo_matheus.e_commerce.Database.DATABASE;
 import leonardo_matheus.e_commerce.Database.Pessoas;
@@ -17,7 +19,7 @@ public class CadastroPessoas extends AppCompatActivity {
 
     private Pessoas pessoas;
     private int codigo;
-    private EditText nome, senha,rpt_senha, cpf, datanasc;
+    private EditText nome, senha, rpt_senha, cpf, datanasc, email;
     private CRUD_Pessoas crud;
     private Cursor cursor;
 
@@ -27,7 +29,7 @@ public class CadastroPessoas extends AppCompatActivity {
         setContentView(R.layout.cadastro_pessoas);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.ToolbarMenu);
-        myToolbar.setTitle(R.string.title_produto);
+        myToolbar.setTitle(R.string.title_pessoa);
         setSupportActionBar(myToolbar);
 
         nome = (EditText) findViewById(R.id.editNome);
@@ -35,6 +37,7 @@ public class CadastroPessoas extends AppCompatActivity {
         rpt_senha = (EditText) findViewById(R.id.editRepSenha);
         cpf = (EditText) findViewById(R.id.editCPF);
         datanasc = (EditText) findViewById(R.id.editNascimento);
+        email = (EditText) findViewById(R.id.editEmail);
 
         crud = new CRUD_Pessoas(getBaseContext());
         if(this.getIntent().hasExtra("codigo")) {
@@ -45,6 +48,7 @@ public class CadastroPessoas extends AppCompatActivity {
             senha.setText(cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_SENHA)));
             cpf.setText(cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_CPF)));
             datanasc.setText(cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_DATANASCIMENTO)));
+            email.setText(cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_EMAIL)));
         }
     }
 
@@ -67,16 +71,16 @@ public class CadastroPessoas extends AppCompatActivity {
                 break;
             case R.id.button_save:
                 if(!nome.getText().toString().isEmpty() && !senha.getText().toString().isEmpty() && !rpt_senha.getText().toString().isEmpty()
-                        && !cpf.getText().toString().isEmpty() && !datanasc.getText().toString().isEmpty()) {
+                        && !cpf.getText().toString().isEmpty() && !datanasc.getText().toString().isEmpty() && !email.getText().toString().isEmpty()) {
                     if(senha.getText().toString().equals(rpt_senha.getText().toString())) {
                         String resultado;
 
                         if (!this.getIntent().hasExtra("codigo"))
                             resultado = crud.inserirDados(nome.getText().toString(), senha.getText().toString(),
-                                    cpf.getText().toString(), datanasc.getText().toString());
+                                    cpf.getText().toString(), datanasc.getText().toString(), email.getText().toString());
                         else
                             resultado = crud.alterarDados(codigo, nome.getText().toString(), senha.getText().toString(),
-                                    cpf.getText().toString(), datanasc.getText().toString());
+                                    cpf.getText().toString(), datanasc.getText().toString(), email.getText().toString());
 
                         Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
                         finish();

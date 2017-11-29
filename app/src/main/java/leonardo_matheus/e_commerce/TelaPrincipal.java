@@ -122,7 +122,5 @@ public class TelaPrincipal extends AppCompatActivity
                 break;
 
         }
-
-
     }
 }

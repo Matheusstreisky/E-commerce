@@ -15,7 +15,7 @@ public class CRUD_Pessoas {
         DATABASE = new DATABASE(context);
     }
 
-    public String inserirDados(String nome, String senha, String cpf, String datanascimento) {
+    public String inserirDados(String nome, String senha, String cpf, String datanascimento, String email) {
         db = DATABASE.getWritableDatabase();
         ContentValues valores = new ContentValues();
 
@@ -23,6 +23,7 @@ public class CRUD_Pessoas {
         valores.put(DATABASE.COLUNA_SENHA, senha);
         valores.put(DATABASE.COLUNA_CPF, cpf);
         valores.put(DATABASE.COLUNA_DATANASCIMENTO, datanascimento);
+        valores.put(DATABASE.COLUNA_EMAIL, email);
 
         long resultado = db.insert(DATABASE.TABELA_PESSOAS, null, valores);
         db.close();
@@ -33,7 +34,7 @@ public class CRUD_Pessoas {
             return "Registro cadastrado com sucesso!";
     }
 
-    public String alterarDados(int id, String nome, String senha, String cpf, String datanascimento) {
+    public String alterarDados(int id, String nome, String senha, String cpf, String datanascimento, String email) {
         db = DATABASE.getWritableDatabase();
         ContentValues valores = new ContentValues();
 
@@ -41,6 +42,7 @@ public class CRUD_Pessoas {
         valores.put(DATABASE.COLUNA_SENHA, senha);
         valores.put(DATABASE.COLUNA_CPF, cpf);
         valores.put(DATABASE.COLUNA_DATANASCIMENTO, datanascimento);
+        valores.put(DATABASE.COLUNA_EMAIL, email);
         String where = DATABASE.COLUNA_ID + "=" + id;
 
         long resultado = db.update(DATABASE.TABELA_PESSOAS, valores, where, null);
@@ -65,7 +67,8 @@ public class CRUD_Pessoas {
     }
 
     public Cursor consultarDados() {
-        String[] campos = {DATABASE.COLUNA_ID, DATABASE.COLUNA_NOME, DATABASE.COLUNA_SENHA, DATABASE.COLUNA_CPF, DATABASE.COLUNA_DATANASCIMENTO};
+        String[] campos = {DATABASE.COLUNA_ID, DATABASE.COLUNA_NOME, DATABASE.COLUNA_SENHA, DATABASE.COLUNA_CPF,
+                DATABASE.COLUNA_DATANASCIMENTO, DATABASE.COLUNA_EMAIL};
         db = DATABASE.getReadableDatabase();
         cursor = db.query(DATABASE.TABELA_PESSOAS, campos, null, null, null, null, null, null);
 
@@ -77,8 +80,22 @@ public class CRUD_Pessoas {
     }
 
     public Cursor carregarDados(int id) {
-        String[] campos = {DATABASE.COLUNA_ID, DATABASE.COLUNA_SENHA, DATABASE.COLUNA_NOME, DATABASE.COLUNA_CPF, DATABASE.COLUNA_DATANASCIMENTO};
+        String[] campos = {DATABASE.COLUNA_ID, DATABASE.COLUNA_SENHA, DATABASE.COLUNA_NOME, DATABASE.COLUNA_CPF,
+                DATABASE.COLUNA_DATANASCIMENTO, DATABASE.COLUNA_EMAIL};
         String where = DATABASE.COLUNA_ID + "=" + id;
+        db = DATABASE.getReadableDatabase();
+        cursor = db.query(DATABASE.TABELA_PESSOAS, campos, where, null, null, null, null, null);
+
+        if(cursor != null)
+            cursor.moveToFirst();
+
+        db.close();
+        return cursor;
+    }
+
+    public Cursor validarUsuarioSenha(String email, String senha) {
+        String[] campos = {DATABASE.COLUNA_ID, DATABASE.COLUNA_NOME, DATABASE.COLUNA_SENHA};
+        String where = DATABASE.COLUNA_EMAIL + " like '" + email + "' AND " + DATABASE.COLUNA_SENHA + " like '" + senha +"'";
         db = DATABASE.getReadableDatabase();
         cursor = db.query(DATABASE.TABELA_PESSOAS, campos, where, null, null, null, null, null);
 

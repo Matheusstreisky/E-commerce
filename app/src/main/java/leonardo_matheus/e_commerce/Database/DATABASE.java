@@ -8,12 +8,14 @@ public class DATABASE extends SQLiteOpenHelper {
     private static final String NOME_BANCO = "e_commerce";
     private static final int VERSAO_BANCO = 2;
 
-    // Tableas
+    /* Tabelas -------------------------------------------------------------------------------------
+    --------------------------------------------------------------------------------------------- */
     public static final String TABELA_FORNECEDORES = "fornecedores";
     public static final String TABELA_PRODUTOS = "produtos";
     public static final String TABELA_PESSOAS = "pessoas";
 
-    // Campos de atritubo
+    /* Campos de atritubo --------------------------------------------------------------------------
+    --------------------------------------------------------------------------------------------- */
     public static final String COLUNA_ID = "_id";
     public static final String COLUNA_NOME = "nome";
     public static final String COLUNA_CEP = "cep";
@@ -30,18 +32,20 @@ public class DATABASE extends SQLiteOpenHelper {
     public static final String COLUNA_CPF = "cpf";
     public static final String COLUNA_DATANASCIMENTO = "datanascimento";
     public static final String COLUNA_SENHA = "senha";
+    public static final String COLUNA_EMAIL = "email";
 
-    // Comandos SQL
+    /* Comandos SQL --------------------------------------------------------------------------------
+    --------------------------------------------------------------------------------------------- */
     private static final String TABLE_FORNECEDORES =
             "CREATE TABLE " + TABELA_FORNECEDORES + " ("
                     + COLUNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                    + COLUNA_NOME+ " TEXT NOT NULL,"
-                    + COLUNA_CEP+ " TEXT,"
-                    + COLUNA_CIDADE+ " TEXT,"
-                    + COLUNA_PAIS+ " TEXT,"
-                    + COLUNA_ESTADO+ " TEXT,"
-                    + COLUNA_TELEFONE+ " TEXT NOT NULL,"
-                    + COLUNA_COMPLEMENTO+ " TEXT"
+                    + COLUNA_NOME + " TEXT NOT NULL,"
+                    + COLUNA_CEP + " TEXT,"
+                    + COLUNA_CIDADE + " TEXT,"
+                    + COLUNA_PAIS + " TEXT,"
+                    + COLUNA_ESTADO + " TEXT,"
+                    + COLUNA_TELEFONE + " TEXT NOT NULL,"
+                    + COLUNA_COMPLEMENTO + " TEXT"
                     + ")";
     private static final String TABLE_PRODUTOS =
             "CREATE TABLE " + TABELA_PRODUTOS + " ("
@@ -59,11 +63,12 @@ public class DATABASE extends SQLiteOpenHelper {
                     + COLUNA_NOME + " TEXT NOT NULL,"
                     + COLUNA_SENHA + " TEXT NOT NULL,"
                     + COLUNA_CPF + " TEXT NOT NULL,"
-                    + COLUNA_DATANASCIMENTO + " TEXT NOT NULL"
+                    + COLUNA_DATANASCIMENTO + " TEXT NOT NULL,"
+                    + COLUNA_EMAIL + "TEXT NOT NULL"
                     + ");";
-    private static final String INSERT_ADM = "INSERT INTO "
-            + TABELA_PESSOAS + " ("+COLUNA_NOME+", "+COLUNA_SENHA+", "+COLUNA_CPF+", "+COLUNA_DATANASCIMENTO+")" +
-            " VALUES('admin', 'admin', '000.000.000-00', '00-00-00');";
+    private static final String INSERT_ADM = "INSERT INTO " + TABELA_PESSOAS
+            + " (" + COLUNA_NOME + ", " + COLUNA_SENHA + ", " + COLUNA_CPF + ", " + COLUNA_DATANASCIMENTO + ")"
+            + " VALUES('admin', 'admin', '000.000.000-00', '00-00-00');";
 
 
 

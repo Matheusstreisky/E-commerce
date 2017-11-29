@@ -7,12 +7,14 @@ public class Pessoas {
     private String Senha;
     private String CPF;
     private String DataNascimento;
+    private String Email;
 
-    public Pessoas(String nome, String senha, String CPF, String dataNascimento) {
+    public Pessoas(String nome, String senha, String CPF, String dataNascimento, String email) {
         setNome(nome);
         setSenha(senha);
         setCPF(CPF);
         setDataNascimento(dataNascimento);
+        setEmail(email);
     }
 
 
@@ -54,5 +56,13 @@ public class Pessoas {
 
     public void setDataNascimento(String dataNascimento) {
         DataNascimento = dataNascimento;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
     }
 }
