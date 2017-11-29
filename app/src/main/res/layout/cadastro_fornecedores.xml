@@ -3,16 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="leonardo_matheus.e_commerce.CadastroFornecedores">
+    tools:context="leonardo_matheus.e_commerce.CadastroProdutos">
 
-    <include android:id="@+id/ToolbarMenu" layout="@layout/toolbar_menu" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include android:id="@+id/ToolbarMenu" layout="@layout/toolbar_menu" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp" >
 
     <TextView
         android:id="@+id/TV_Nome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_below="@id/ToolbarMenu"
+        android:layout_marginTop="60dp"
         android:text="@string/string_nome" />
 
     <EditText
@@ -151,4 +160,5 @@
         android:lines="5"
         android:labelFor="@id/ET_Complemento" />
 
+    </RelativeLayout>
 </RelativeLayout>

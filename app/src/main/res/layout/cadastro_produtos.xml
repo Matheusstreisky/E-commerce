@@ -15,7 +15,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="20dp" >
+        android:padding="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
     <TextView
         android:id="@+id/TV_Nome"
@@ -23,6 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_marginTop="60dp"
+
         android:text="@string/string_nome" />
 
     <EditText
@@ -61,22 +65,23 @@
         android:id="@+id/TV_Quantidade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/ET_Valor"
-        android:layout_marginTop="25dp"
-        android:text="@string/string_quantidade" />
+        android:text="@string/string_quantidade"
+        android:layout_above="@+id/ET_Quantidade"
+        android:layout_alignLeft="@+id/ET_Quantidade"
+        android:layout_alignStart="@+id/ET_Quantidade" />
 
     <EditText
         android:id="@+id/ET_Quantidade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/TV_Quantidade"
-        android:layout_marginTop="5dp"
         android:width="150dp"
         android:ems="10"
         android:labelFor="@id/ET_Quantidade"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:layout_alignBaseline="@+id/ET_Valor"
+        android:layout_alignBottom="@+id/ET_Valor"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/TV_Tipo"
@@ -96,12 +101,29 @@
         style="@style/spinner_style"
         android:layout_alignParentStart="true" />
 
-    <TextView
+        <TextView
+            android:id="@+id/TV_Fornecedores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_below="@+id/SP_Tipo"
+            android:text="@string/title_fornecedor" />
+
+        <Spinner
+            android:id="@+id/SP_Fornecedores"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/TV_Fornecedores"
+            style="@style/spinner_style"
+            android:layout_alignParentStart="true" />
+
+        <TextView
         android:id="@+id/TV_Descricao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/SP_Tipo"
+        android:layout_below="@+id/SP_Fornecedores"
         android:layout_marginTop="25dp"
         android:text="@string/string_descricao" />
 

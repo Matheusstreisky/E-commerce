@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings"></string>
+    <string name="insira_seu_cpf">Insert your CPF</string>
+    <string name="insira_sua_data_de_nascimento">Insert your birthday date</string>
+    <string name="listagem_das_novels">Novel List</string>
+    <string name="listagem_dos_mangas">Manga List</string>
+    <string name="menu_delete">Delete</string>
+    <string name="menu_edit">Edit</string>
+    <string name="menu_save">Save</string>
+    <string name="menu_search">Search</string>
+    <string name="string_bt_cadastrar">Register</string>
+    <string name="string_bt_login"></string>
+    <string name="string_cadastro">Make your Registration</string>
+    <string name="string_cidade">City:</string>
+    <string name="string_cep">Zip Code:</string>
+    <string name="string_complemento">Complemention:</string>
+    <string name="string_datNasc">Birthday date:</string>
+    <string name="string_descricao">Describe:</string>
+    <string name="string_estado">State:</string>
+    <string name="string_frag_abrir_pdf">Open PDF</string>
+    <string name="string_info_email">Insert your E-mail.</string>
+    <string name="string_info_senha">Insert your password</string>
+    <string name="string_login">Login</string>
+    <string name="string_manga_autor">Author</string>
+    <string name="string_manga_nome">Name</string>
+    <string name="string_nav_sac">SAQ</string>
+    <string name="string_nome">Name:</string>
+    <string name="string_pais">Country:</string>
+    <string name="string_quantidade">Quantity:</string>
+    <string name="string_rpt_senha">Repeat password</string>
+    <string name="string_selecione">Select</string>
+    <string name="string_senha">Password:</string>
+    <string name="string_telefone">Telephone:</string>
+    <string name="string_tipo">Type:</string>
+    <string name="string_valor">Value:</string>
+    <string name="title_administrador">Adm</string>
+    <string name="title_detalhes">Detail</string>
+    <string name="title_fornecedor">Providers</string>
+    <string name="title_nome_itens">Name</string>
+    <string name="title_pessoa">People</string>
+    <string name="title_produto">Products</string>
+    <string name="menu_communicate">Communicate</string>
+    <string name="title_consulta">Consult</string>
+</resources>

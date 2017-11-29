@@ -1,15 +1,21 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context="leonardo_matheus.e_commerce.CadastroProdutos">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include android:id="@+id/ToolbarMenu" layout="@layout/toolbar_menu" />
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:ignore="UselessParent">
-
-        <include android:id="@+id/ToolbarMenu" layout="@layout/toolbar_menu" />
+        android:padding="20dp" >
 
         <TextView
             android:id="@+id/textNome"
@@ -17,12 +23,11 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="60dp"
             android:text="@string/string_nome"
             tools:ignore="HardcodedText,MissingConstraints,RtlHardcoded"
             tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp"
-            android:layout_below="@id/ToolbarMenu" />
+            tools:layout_editor_absoluteY="8dp" />
 
         <EditText
             android:id="@+id/editNome"
@@ -31,7 +36,6 @@
             android:ems="10"
             android:hint="Nome Completo"
             android:inputType="textPersonName"
-            app:layout_constraintLeft_toLeftOf="@+id/textNome"
             tools:ignore="HardcodedText,MissingConstraints,RtlHardcoded"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/textNome" />
@@ -136,8 +140,8 @@
             android:layout_below="@+id/textEmail"
             android:ems="10"
             android:hint="@string/insira_seu_email"
-            android:inputType="text"
+            android:inputType="textEmailAddress"
             tools:ignore="LabelFor,RtlHardcoded" />
 
     </RelativeLayout>
-</LinearLayout>
+</RelativeLayout>

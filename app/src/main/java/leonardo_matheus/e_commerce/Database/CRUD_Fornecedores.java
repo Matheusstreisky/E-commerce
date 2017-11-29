@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
+
 
 public class CRUD_Fornecedores {
     private SQLiteDatabase db;
@@ -93,5 +95,41 @@ public class CRUD_Fornecedores {
 
         db.close();
         return cursor;
+    }
+
+    public ArrayList<String> listarNomeFornecedores() {
+        String[] campos = {DATABASE.COLUNA_ID, DATABASE.COLUNA_NOME, DATABASE.COLUNA_CEP, DATABASE.COLUNA_CIDADE, DATABASE.COLUNA_PAIS,
+                DATABASE.COLUNA_ESTADO, DATABASE.COLUNA_TELEFONE, DATABASE.COLUNA_COMPLEMENTO};
+        db = DATABASE.getReadableDatabase();
+        cursor = db.query(DATABASE.TABELA_FORNECEDORES, campos, null, null, null, null, null, null);
+
+        ArrayList<String> array = new ArrayList<>();
+        if(cursor != null) {
+            while (cursor.moveToNext()) {
+                String nome = cursor.getString(1);
+                array.add(nome);
+            }
+        }
+
+        db.close();
+        return array;
+    }
+
+    public ArrayList<Integer> listarCodigoFornecedores() {
+        String[] campos = {DATABASE.COLUNA_ID, DATABASE.COLUNA_NOME, DATABASE.COLUNA_CEP, DATABASE.COLUNA_CIDADE, DATABASE.COLUNA_PAIS,
+                DATABASE.COLUNA_ESTADO, DATABASE.COLUNA_TELEFONE, DATABASE.COLUNA_COMPLEMENTO};
+        db = DATABASE.getReadableDatabase();
+        cursor = db.query(DATABASE.TABELA_FORNECEDORES, campos, null, null, null, null, null, null);
+
+        ArrayList<Integer> array = new ArrayList<>();
+        if(cursor != null) {
+            while (cursor.moveToNext()) {
+                int codigo = cursor.getInt(0);
+                array.add(codigo);
+            }
+        }
+
+        db.close();
+        return array;
     }
 }

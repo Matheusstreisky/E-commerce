@@ -142,6 +142,8 @@ public class Consulta extends AppCompatActivity {
         menu.findItem(R.id.button_save).setVisible(false);
         menu.findItem(R.id.button_edit).setVisible(false);
         menu.findItem(R.id.button_delete).setVisible(false);
+        menu.findItem(R.id.button_carrinho).setVisible(false);
+
         return true;
     }
 

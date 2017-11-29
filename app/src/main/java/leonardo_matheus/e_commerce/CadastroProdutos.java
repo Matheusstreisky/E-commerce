@@ -13,7 +13,9 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Locale;
 
+import leonardo_matheus.e_commerce.Database.CRUD_Fornecedores;
 import leonardo_matheus.e_commerce.Database.CRUD_Produtos;
 import leonardo_matheus.e_commerce.Database.DATABASE;
 import leonardo_matheus.e_commerce.Database.Produtos;
@@ -22,9 +24,10 @@ public class CadastroProdutos extends AppCompatActivity {
     private Produtos produtos;
     private int codigo;
     private EditText nome, valor, quantidade, descricao;
-    private Spinner tipo;
+    private Spinner tipo, fornecedor;
     private CRUD_Produtos crud;
     private Cursor cursor;
+    private ArrayList<Integer> codigos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,13 +42,23 @@ public class CadastroProdutos extends AppCompatActivity {
         valor = (EditText) findViewById(R.id.ET_Valor);
         quantidade = (EditText) findViewById(R.id.ET_Quantidade);
         tipo = (Spinner) findViewById(R.id.SP_Tipo);
+        fornecedor = (Spinner) findViewById(R.id.SP_Fornecedores);
         descricao = (EditText) findViewById(R.id.ET_Descricao);
+
+        valor.addTextChangedListener(new MoneyTextWatcher(valor, new Locale("pt", "BR")));
 
         // Seta o spinner com os determinados valores
         ArrayList<String> tipos = new ArrayList<>(Arrays.asList("Manga", "Light Novel"));
         ArrayAdapter<String> array = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tipos);
         array.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         tipo.setAdapter(array);
+
+        CRUD_Fornecedores crud_fornecedores = new CRUD_Fornecedores(getBaseContext());
+        ArrayList<String> forn = crud_fornecedores.listarNomeFornecedores();
+        codigos = crud_fornecedores.listarCodigoFornecedores();
+        ArrayAdapter<String> fornecedores = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, forn);
+        fornecedores.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        fornecedor.setAdapter(fornecedores);
 
         crud = new CRUD_Produtos(getBaseContext());
         if(this.getIntent().hasExtra("codigo")) {
@@ -67,6 +80,7 @@ public class CadastroProdutos extends AppCompatActivity {
         menu.findItem(R.id.button_search).setVisible(false);
         menu.findItem(R.id.button_edit).setVisible(false);
         menu.findItem(R.id.button_delete).setVisible(false);
+        menu.findItem(R.id.button_carrinho).setVisible(false);
 
         return true;
     }
@@ -78,14 +92,16 @@ public class CadastroProdutos extends AppCompatActivity {
                 break;
             case R.id.button_save:
                 if(!nome.getText().toString().isEmpty() && !valor.getText().toString().isEmpty() && !quantidade.getText().toString().isEmpty()) {
-                    String resultado;
+                    String resultado, v;
+                    v = valor.getText().toString().substring(2, valor.getText().toString().length());
+                    v = v.replace(",", ".");
 
                     if(!this.getIntent().hasExtra("codigo"))
-                        resultado = crud.inserirDados(nome.getText().toString(), Double.parseDouble(valor.getText().toString()),
-                                Integer.parseInt(quantidade.getText().toString()), tipo.getSelectedItem().toString(), descricao.getText().toString());
+                        resultado = crud.inserirDados(nome.getText().toString(), Double.parseDouble(v), Integer.parseInt(quantidade.getText().toString()),
+                                tipo.getSelectedItem().toString(), codigos.get(fornecedor.getSelectedItemPosition()), descricao.getText().toString());
                     else
-                        resultado = crud.alterarDados(codigo, nome.getText().toString(), Double.parseDouble(valor.getText().toString()),
-                                Integer.parseInt(quantidade.getText().toString()), tipo.getSelectedItem().toString(), descricao.getText().toString());
+                        resultado = crud.alterarDados(codigo, nome.getText().toString(), Double.parseDouble(v), Integer.parseInt(quantidade.getText().toString()),
+                                tipo.getSelectedItem().toString(), codigos.get(fornecedor.getSelectedItemPosition()), descricao.getText().toString());
 
                     Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
                     finish();

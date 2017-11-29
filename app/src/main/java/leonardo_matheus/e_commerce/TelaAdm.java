@@ -40,6 +40,8 @@ public class TelaAdm extends AppCompatActivity implements View.OnClickListener {
         menu.findItem(R.id.button_save).setVisible(false);
         menu.findItem(R.id.button_edit).setVisible(false);
         menu.findItem(R.id.button_delete).setVisible(false);
+        menu.findItem(R.id.button_carrinho).setVisible(false);
+
         return true;
     }
 

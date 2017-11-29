@@ -81,7 +81,7 @@ public class Visualizar extends AppCompatActivity {
             rotulos.setText(R.string.string_quantidade);
             rotulos = (TextView) findViewById(R.id.TV_Campo4);
             rotulos.setText(R.string.string_tipo);
-            rotulos = (TextView) findViewById(R.id.TV_Campo5);
+            rotulos = (TextView) findViewById(R.id.TV_Campo6);
             rotulos.setText(R.string.string_descricao);
 
             rotulos = (TextView) findViewById(R.id.ET_Campo1);
@@ -92,8 +92,19 @@ public class Visualizar extends AppCompatActivity {
             rotulos.setText(cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_QUANTIDADE)));
             rotulos = (TextView) findViewById(R.id.ET_Campo4);
             rotulos.setText(cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_TIPO)));
-            rotulos = (TextView) findViewById(R.id.ET_Campo5);
+            rotulos = (TextView) findViewById(R.id.ET_Campo6);
             rotulos.setText(cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_DESCRICAO)));
+
+            codigo = cursor.getColumnIndexOrThrow(DATABASE.COLUNA_ID_FORNECEDOR);
+            if(codigo >= 0) {
+                crud_fornecedores = new CRUD_Fornecedores(getBaseContext());
+                cursor = crud_fornecedores.carregarDados(codigo);
+
+                rotulos = (TextView) findViewById(R.id.TV_Campo5);
+                rotulos.setText(R.string.title_fornecedor);
+                rotulos = (TextView) findViewById(R.id.ET_Campo5);
+                rotulos.setText(cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_NOME)));
+            }
         }
         else if(this.getIntent().getStringExtra("tela").equals("pessoa")) {
             crud_pessoas = new CRUD_Pessoas(getBaseContext());
@@ -106,6 +117,8 @@ public class Visualizar extends AppCompatActivity {
             rotulos.setText(R.string.string_CPF);
             rotulos = (TextView) findViewById(R.id.TV_Campo3);
             rotulos.setText(R.string.string_datNasc);
+            rotulos = (TextView) findViewById(R.id.TV_Campo4);
+            rotulos.setText(R.string.string_email);
 
             rotulos = (TextView) findViewById(R.id.ET_Campo1);
             rotulos.setText(cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_NOME)));
@@ -113,6 +126,8 @@ public class Visualizar extends AppCompatActivity {
             rotulos.setText(cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_CPF)));
             rotulos = (TextView) findViewById(R.id.ET_Campo3);
             rotulos.setText(cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_DATANASCIMENTO)));
+            rotulos = (TextView) findViewById(R.id.ET_Campo4);
+            rotulos.setText(cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_EMAIL)));
         }
     }
 
@@ -123,6 +138,8 @@ public class Visualizar extends AppCompatActivity {
         // Determina quais menus serão visiveis nesta tela
         menu.findItem(R.id.button_search).setVisible(false);
         menu.findItem(R.id.button_save).setVisible(false);
+        menu.findItem(R.id.button_carrinho).setVisible(false);
+
         return true;
     }
 

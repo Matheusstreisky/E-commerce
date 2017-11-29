@@ -1,15 +1,18 @@
 package leonardo_matheus.e_commerce;
 
 import android.database.Cursor;
+import android.icu.text.SimpleDateFormat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Patterns;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.nio.file.Files;
+import java.text.ParseException;
+import java.util.Date;
 
 import leonardo_matheus.e_commerce.Database.CRUD_Pessoas;
 import leonardo_matheus.e_commerce.Database.DATABASE;
@@ -39,8 +42,11 @@ public class CadastroPessoas extends AppCompatActivity {
         datanasc = (EditText) findViewById(R.id.editNascimento);
         email = (EditText) findViewById(R.id.editEmail);
 
+        cpf.addTextChangedListener(Mask.insert("###.###.###-##", cpf));
+        datanasc.addTextChangedListener(Mask.insert("##/##/####", datanasc));
+
         crud = new CRUD_Pessoas(getBaseContext());
-        if(this.getIntent().hasExtra("codigo")) {
+        if (this.getIntent().hasExtra("codigo")) {
             codigo = Integer.parseInt(this.getIntent().getStringExtra("codigo"));
             cursor = crud.carregarDados(codigo);
 
@@ -60,6 +66,7 @@ public class CadastroPessoas extends AppCompatActivity {
         menu.findItem(R.id.button_search).setVisible(false);
         menu.findItem(R.id.button_edit).setVisible(false);
         menu.findItem(R.id.button_delete).setVisible(false);
+        menu.findItem(R.id.button_carrinho).setVisible(false);
 
         return true;
     }
@@ -70,9 +77,25 @@ public class CadastroPessoas extends AppCompatActivity {
             case R.id.button_search:
                 break;
             case R.id.button_save:
-                if(!nome.getText().toString().isEmpty() && !senha.getText().toString().isEmpty() && !rpt_senha.getText().toString().isEmpty()
+                if (!nome.getText().toString().isEmpty() && !senha.getText().toString().isEmpty() && !rpt_senha.getText().toString().isEmpty()
                         && !cpf.getText().toString().isEmpty() && !datanasc.getText().toString().isEmpty() && !email.getText().toString().isEmpty()) {
-                    if(senha.getText().toString().equals(rpt_senha.getText().toString())) {
+
+                    String c = cpf.getText().toString().replace(".", "");
+                    c = c.replaceAll("-", "");
+                    if(!ValidaCPF.isCPF(c)) {
+                        Toast.makeText(getApplicationContext(), "CPF inválido!!", Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+                    if(!validarData(datanasc.getText().toString())) {
+                        Toast.makeText(getApplicationContext(), "Data incorreta!", Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+                    if(!validarEmail(email.getText().toString())) {
+                        Toast.makeText(getApplicationContext(), "Email inválido!!", Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+
+                    if (senha.getText().toString().equals(rpt_senha.getText().toString())) {
                         String resultado;
 
                         if (!this.getIntent().hasExtra("codigo"))
@@ -84,11 +107,10 @@ public class CadastroPessoas extends AppCompatActivity {
 
                         Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
                         finish();
-                    }
-                    else
-                        Toast.makeText(getApplicationContext(), "Senhas não conferem!", Toast.LENGTH_SHORT).show();
-                }
-                else
+                    } else
+                        Toast.makeText(getApplicationContext(), "Campos de senhas não estão iguais!", Toast.LENGTH_SHORT).show();
+
+                } else
                     Toast.makeText(getApplicationContext(), "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button_edit:
@@ -99,5 +121,27 @@ public class CadastroPessoas extends AppCompatActivity {
                 break;
         }
         return true;
+    }
+
+    private boolean validarData(String data) {
+        String pattern = "dd/MM/yyyy";
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+        String d = datanasc.getText().toString();
+        try {
+            sdf.setLenient(false);
+            Date date = sdf.parse(d);
+            return true;
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    private boolean validarEmail(String email) {
+        if(email == null)
+            return false;
+        else
+            return Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 }

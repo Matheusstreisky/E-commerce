@@ -1,6 +1,7 @@
 package leonardo_matheus.e_commerce;
 
 import android.database.Cursor;
+import android.graphics.MaskFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -52,6 +53,11 @@ public class CadastroFornecedores extends AppCompatActivity {
         array.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         estado.setAdapter(array);
 
+        // Seta as mascaras para os campos
+        cep.addTextChangedListener(Mask.insert("#####-###", cep));
+        telefone.addTextChangedListener(Mask.insert("(##)#####-####", telefone));
+
+
         // Se ouver um "codigo" (este codigo indica que foi feito um pedido de alteração do cadastro)
         // seta os valores recuperados do banco nos campos correspondentes
         crud = new CRUD_Fornecedores(getBaseContext());
@@ -78,6 +84,7 @@ public class CadastroFornecedores extends AppCompatActivity {
         menu.findItem(R.id.button_search).setVisible(false);
         menu.findItem(R.id.button_edit).setVisible(false);
         menu.findItem(R.id.button_delete).setVisible(false);
+        menu.findItem(R.id.button_carrinho).setVisible(false);
 
         return true;
     }
@@ -89,7 +96,8 @@ public class CadastroFornecedores extends AppCompatActivity {
             case R.id.button_search:
                 break;
             case R.id.button_save:
-                if(!nome.getText().toString().isEmpty()) {
+                if(!nome.getText().toString().isEmpty() && !cep.getText().toString().isEmpty() && !cidade.getText().toString().isEmpty() &&
+                        !pais.getText().toString().isEmpty() && !telefone.getText().toString().isEmpty()) {
                     String resultado;
 
                     if(!this.getIntent().hasExtra("codigo"))
@@ -105,7 +113,7 @@ public class CadastroFornecedores extends AppCompatActivity {
                     finish();
                 }
                 else
-                    Toast.makeText(getApplicationContext(), "Preencha o nome do fornecedor!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button_edit:
                 break;

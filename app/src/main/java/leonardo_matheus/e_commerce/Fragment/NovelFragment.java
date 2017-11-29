@@ -37,7 +37,7 @@ public class NovelFragment extends Fragment {
 
         RecyclerView recyclerView = (RecyclerView)rootView.findViewById(R.id.recyclerf);
         recyclerView.setHasFixedSize(false);
-        FragmentAdapter adapter = new FragmentAdapter(setMangaList());
+        FragmentAdapter adapter = new FragmentAdapter(setNovelList());
         recyclerView.setAdapter(adapter);
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
@@ -48,7 +48,7 @@ public class NovelFragment extends Fragment {
     }
 
 
-    public List<Manga> setMangaList() {
+    public List<Manga> setNovelList() {
         String[] nome = new String[]{"Re:Zero", "No game No Life", "Fate/Zero", "kono subarashii sekai ni shukufuku wo",
                 "Shakugan No Shana", "Toradora", "1 Litro de Lágrimas", "Another"};
         String[] autor = new String[]{"Tappey Naqatsuki", "Yuu Kamiya", "Gen Urobuchi", "Natsume Akatsuki",

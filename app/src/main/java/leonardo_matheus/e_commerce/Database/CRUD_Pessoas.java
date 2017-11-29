@@ -43,7 +43,7 @@ public class CRUD_Pessoas {
         valores.put(DATABASE.COLUNA_CPF, cpf);
         valores.put(DATABASE.COLUNA_DATANASCIMENTO, datanascimento);
         valores.put(DATABASE.COLUNA_EMAIL, email);
-        String where = DATABASE.COLUNA_ID + "=" + id;
+        String where = DATABASE.COLUNA_ID_PESSOA + "=" + id;
 
         long resultado = db.update(DATABASE.TABELA_PESSOAS, valores, where, null);
         db.close();
