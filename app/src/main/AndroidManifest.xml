@@ -54,7 +54,12 @@
             android:name=".Visualizar"
             android:screenOrientation="portrait" />
         <activity android:name=".PDF" />
-        <activity android:name=".Carrinho"></activity>
+        <activity android:name=".Tela_FAQ"></activity>
+		<activity android:name=".Carrinho"></activity
+
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
 </manifest>

@@ -40,4 +40,13 @@
     <string name="title_produto">Produtos</string>
     <string name="string_nome">Nome:</string>
     <string name="string_pais">País:</string>
+    <string name="insira_seu_email">Insira seu Email</string>
+    <string name="menu_carrinho">Carrinho</string>
+    <string name="string_bt_login">Login</string>
+    <string name="string_btn_enviar">Enviar</string>
+    <string name="string_campo_nao_obg">Campo não obrigatorio</string>
+    <string name="string_comentario">Comentário</string>
+    <string name="string_email" translatable="false">E-mail</string>
+    <string name="string_emaiul">E-mail:</string>
+    <string name="title_login" translatable="false">Login</string>
 </resources>
