@@ -96,8 +96,15 @@ public class TelaLogin extends AppCompatActivity implements View.OnClickListener
 
                     if(cursor.getCount() > 0) {
                         Toast.makeText(getApplicationContext(), "Bem vindo " + cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_NOME)) + "!", Toast.LENGTH_SHORT).show();
-                        intent = new Intent(this, TelaPrincipal.class);
-                        startActivity(intent);
+
+                        if(usuario.getText().toString().substring(0, 5).equals("admin")) {
+                            intent = new Intent(this, TelaAdm.class);
+                            startActivity(intent);
+                        }
+                        else {
+                            intent = new Intent(this, TelaPrincipal.class);
+                            startActivity(intent);
+                        }
                     }
                     else
                         Toast.makeText(getApplicationContext(), "Usuário ou Senha INCORRETOS!", Toast.LENGTH_SHORT).show();

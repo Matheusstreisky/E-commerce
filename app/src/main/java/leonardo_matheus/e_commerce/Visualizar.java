@@ -95,7 +95,7 @@ public class Visualizar extends AppCompatActivity {
             rotulos = (TextView) findViewById(R.id.ET_Campo6);
             rotulos.setText(cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_DESCRICAO)));
 
-            codigo = cursor.getColumnIndexOrThrow(DATABASE.COLUNA_ID_FORNECEDOR);
+            codigo = cursor.getInt(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_ID_FORNECEDOR));
             if(codigo >= 0) {
                 crud_fornecedores = new CRUD_Fornecedores(getBaseContext());
                 cursor = crud_fornecedores.carregarDados(codigo);

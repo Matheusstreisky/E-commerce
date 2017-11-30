@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="leonardo_matheus.e_commerce.CadastroProdutos">
+    tools:context="leonardo_matheus.e_commerce.CadastroFornecedores">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -28,10 +28,8 @@
         android:id="@+id/ET_Nome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/TV_Nome"
         android:layout_below="@+id/TV_Nome"
         android:layout_marginTop="5dp"
-        android:layout_alignParentStart="true"
         android:ems="10"
         android:labelFor="@id/ET_Nome"
         android:inputType="textPersonName" />
@@ -42,14 +40,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/ET_Nome"
         android:layout_marginTop="25dp"
-        android:layout_alignParentStart="true"
         android:text="@string/string_cep" />
 
     <EditText
         android:id="@+id/ET_CEP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/TV_CEP"
         android:layout_marginTop="5dp"
         android:width="150dp"
@@ -83,7 +79,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/ET_CEP"
         android:layout_marginTop="25dp"
-        android:layout_alignParentStart="true"
         android:text="@string/string_pais" />
 
     <EditText
@@ -95,8 +90,7 @@
         android:layout_below="@+id/TV_Pais"
         android:layout_marginTop="5dp"
         android:width="150dp"
-        android:labelFor="@id/ET_Pais"
-        android:layout_alignParentStart="true" />
+        android:labelFor="@id/ET_Pais" />
 
     <TextView
         android:id="@+id/TV_Estado"
@@ -123,7 +117,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/ET_Pais"
         android:layout_marginTop="25dp"
-        android:layout_alignParentStart="true"
         android:text="@string/string_telefone" />
 
     <EditText
@@ -135,8 +128,7 @@
         android:layout_below="@+id/TV_Telefone"
         android:layout_marginTop="5dp"
         android:width="150dp"
-        android:labelFor="@id/ET_Telefone"
-        android:layout_alignParentStart="true" />
+        android:labelFor="@id/ET_Telefone" />
 
     <TextView
         android:id="@+id/TV_Complemento"
@@ -144,14 +136,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/ET_Telefone"
         android:layout_marginTop="25dp"
-        android:layout_alignParentStart="true"
         android:text="@string/string_complemento" />
 
     <EditText
         android:id="@+id/ET_Complemento"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/TV_Complemento"
         android:layout_marginTop="5dp"
         android:ems="10"

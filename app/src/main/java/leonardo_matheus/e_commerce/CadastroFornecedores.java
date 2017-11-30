@@ -1,7 +1,6 @@
 package leonardo_matheus.e_commerce;
 
 import android.database.Cursor;
-import android.graphics.MaskFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -18,6 +17,7 @@ import java.util.Arrays;
 import leonardo_matheus.e_commerce.Database.CRUD_Fornecedores;
 import leonardo_matheus.e_commerce.Database.DATABASE;
 import leonardo_matheus.e_commerce.Database.Fornecedores;
+import leonardo_matheus.e_commerce.Validation.Mask;
 
 public class CadastroFornecedores extends AppCompatActivity {
     private Fornecedores fornecedores;

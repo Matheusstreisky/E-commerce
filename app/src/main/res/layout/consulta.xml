@@ -5,14 +5,23 @@
     android:layout_height="match_parent"
     tools:context="leonardo_matheus.e_commerce.Consulta">
 
-    <include android:id="@+id/ToolbarMenu" layout="@layout/toolbar_menu" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include android:id="@+id/ToolbarMenu" layout="@layout/toolbar_menu" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp" >
 
     <TextView
         android:id="@+id/TV_Selecione"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ToolbarMenu"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="60dp"
         android:text="@string/string_selecione"/>
 
     <Spinner
@@ -20,18 +29,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/TV_Selecione"
-        android:layout_alignParentEnd="true"
         style="@style/spinner_style" />
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_below="@id/SP_Selecione"
         android:layout_marginTop="20dp"
         android:padding="16dp"/>
 
+</RelativeLayout>
 </RelativeLayout>
 
 

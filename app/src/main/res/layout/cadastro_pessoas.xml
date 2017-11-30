@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="leonardo_matheus.e_commerce.CadastroProdutos">
+    tools:context="leonardo_matheus.e_commerce.CadastroPessoas">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -37,7 +37,6 @@
             android:hint="Nome Completo"
             android:inputType="textPersonName"
             tools:ignore="HardcodedText,MissingConstraints,RtlHardcoded"
-            android:layout_alignParentStart="true"
             android:layout_below="@+id/textNome" />
 
         <TextView
@@ -55,7 +54,6 @@
             android:layout_width="312dp"
             android:layout_height="51dp"
             android:layout_below="@id/textSenha"
-            android:layout_alignParentStart="true"
             android:ems="10"
             android:hint="Insira sua senha"
             android:inputType="textPassword"
@@ -66,7 +64,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/editSenha"
-            android:layout_alignParentStart="true"
             android:text="@string/string_rpt_senha"
             tools:ignore="RtlHardcoded" />
 
@@ -75,7 +72,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textRepSenha"
-            android:layout_alignParentStart="true"
             android:ems="10"
             android:hint="Repita sua senha"
             android:inputType="textPassword"
@@ -86,7 +82,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/editRepSenha"
-            android:layout_alignParentStart="true"
             android:text="@string/string_CPF"
             tools:ignore="RtlHardcoded" />
 
@@ -95,7 +90,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textCPF"
-            android:layout_alignParentStart="true"
             android:ems="10"
             android:hint="@string/insira_seu_cpf"
             android:inputType="numberDecimal"
@@ -106,7 +100,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/editCPF"
-            android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:text="@string/string_datNasc"
             tools:ignore="RtlHardcoded" />
@@ -115,7 +108,6 @@
             android:id="@+id/editNascimento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
             android:layout_below="@+id/textNascimento"
             android:ems="10"
             android:hint="@string/insira_sua_data_de_nascimento"
@@ -127,7 +119,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/editNascimento"
-            android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:text="@string/string_emaiul"
             tools:ignore="RtlHardcoded" />
@@ -136,7 +127,6 @@
             android:id="@+id/editEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
             android:layout_below="@+id/textEmail"
             android:ems="10"
             android:hint="@string/insira_seu_email"

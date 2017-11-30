@@ -2,23 +2,31 @@
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:columnCount="2"
-    android:rowCount="2" >
+    android:columnCount="3"
+    android:rowCount="3" >
 
     <TextView
-        android:id="@+id/idItens"
-        android:layout_width="100dp"
+        android:id="@+id/nomeItens"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/title_id_itens"
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/nomeItens"
-        android:layout_width="250dp"
+        android:id="@+id/tipoItens"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/title_nome_itens"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/valorItens"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/title_id_itens"
         android:textSize="20sp" />
 
 </GridLayout>

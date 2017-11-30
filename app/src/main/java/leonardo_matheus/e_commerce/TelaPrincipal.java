@@ -1,8 +1,13 @@
 package leonardo_matheus.e_commerce;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.widget.SimpleCursorAdapter;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,13 +18,26 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.FilterQueryProvider;
+import android.widget.ListView;
 
+import java.util.ArrayList;
+
+import leonardo_matheus.e_commerce.Database.CRUD_Produtos;
+import leonardo_matheus.e_commerce.Database.DATABASE;
+import leonardo_matheus.e_commerce.Database.Fornecedores;
+import leonardo_matheus.e_commerce.Database.Produtos;
 import leonardo_matheus.e_commerce.Fragment.MangaFragment;
 import leonardo_matheus.e_commerce.Fragment.NovelFragment;
 
 
 public class TelaPrincipal extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private ListView listView;
+    private SimpleCursorAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +64,31 @@ public class TelaPrincipal extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        listView = (ListView) findViewById(R.id.listView);
+        String[] campos;
+        int[] idViews;
+
+        CRUD_Produtos crud_produtos = new CRUD_Produtos(getBaseContext());
+        final Cursor cursor = crud_produtos.consultarDados();
+        campos = new String[] {DATABASE.COLUNA_NOME, DATABASE.COLUNA_TIPO, DATABASE.COLUNA_VALOR};
+        idViews = new int[] {R.id.nomeItens, R.id.tipoItens, R.id.valorItens};
+
+        adapter = new SimpleCursorAdapter(this, R.layout.tela_principal_itens, cursor, campos, idViews, 0);
+        listView = (ListView) findViewById(R.id.listView);
+        listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                cursor.moveToPosition(i);
+                String codigo = cursor.getString(cursor.getColumnIndexOrThrow(DATABASE.COLUNA_NOME));
+                Intent intent = new Intent(getBaseContext(), Carrinho.class);
+                intent.putExtra("codigo", codigo);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     @Override

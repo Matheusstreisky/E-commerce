@@ -39,6 +39,7 @@
     <string name="string_datNasc">Data de Nascimento:</string>
     <string name="string_emaiul">E-mail:</string>
     <string name="string_selecione">Selecione:</string>
+    <string name="string_pesquisar">Pesquisar:</string>
 
     <string name="string_login">Faça seu Login</string>
     <string name="string_cadastro">Ou faça seu cadastro.</string>

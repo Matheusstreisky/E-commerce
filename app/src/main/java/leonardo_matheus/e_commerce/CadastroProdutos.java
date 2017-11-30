@@ -19,6 +19,7 @@ import leonardo_matheus.e_commerce.Database.CRUD_Fornecedores;
 import leonardo_matheus.e_commerce.Database.CRUD_Produtos;
 import leonardo_matheus.e_commerce.Database.DATABASE;
 import leonardo_matheus.e_commerce.Database.Produtos;
+import leonardo_matheus.e_commerce.Validation.MoneyTextWatcher;
 
 public class CadastroProdutos extends AppCompatActivity {
     private Produtos produtos;

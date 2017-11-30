@@ -17,6 +17,8 @@ import java.util.Date;
 import leonardo_matheus.e_commerce.Database.CRUD_Pessoas;
 import leonardo_matheus.e_commerce.Database.DATABASE;
 import leonardo_matheus.e_commerce.Database.Pessoas;
+import leonardo_matheus.e_commerce.Validation.Mask;
+import leonardo_matheus.e_commerce.Validation.ValidaCPF;
 
 public class CadastroPessoas extends AppCompatActivity {
 

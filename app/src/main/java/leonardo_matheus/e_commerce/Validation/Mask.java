@@ -1,4 +1,4 @@
-package leonardo_matheus.e_commerce;
+package leonardo_matheus.e_commerce.Validation;
 
 import android.text.Editable;
 import android.text.TextWatcher;
