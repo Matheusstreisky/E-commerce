@@ -80,6 +80,9 @@ public class TelaPrincipal extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * @param item
+     */
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -105,7 +108,11 @@ public class TelaPrincipal extends AppCompatActivity
         } else if (id == R.id.nav_adm) {
             Intent i = new Intent(this, TelaAdm.class);
             startActivity(i);
+        } else if (id == R.id.nav_faq) {
+            Intent i = new Intent(this, Tela_FAQ.class);
+            startActivity(i);
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

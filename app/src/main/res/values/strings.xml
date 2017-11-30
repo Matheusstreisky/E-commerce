@@ -4,7 +4,7 @@
     <string name="title_produto">Produtos</string>
     <string name="title_pessoa">Pessoas</string>
     <string name="title_consulta">Consultar</string>
-    <string name="title_login" translatable="false">Login</string>
+    <string name="title_login">Login</string>
     <string name="title_administrador">Administrador</string>
     <string name="title_activity_tela_principal" translatable="false">E-Commerce</string>
     <string name="title_detalhes">Detalhes</string>
@@ -42,10 +42,10 @@
 
     <string name="string_login">Faça seu Login</string>
     <string name="string_cadastro">Ou faça seu cadastro.</string>
-    <string name="string_email" translatable="false">E-mail</string>
+    <string name="string_email">E-mail</string>
     <string name="string_info_email">Informe seu E-mail.</string>
     <string name="string_info_senha">Informe sua senha.</string>
-    <string name="string_bt_login" translatable="false">Login</string>
+    <string name="string_bt_login">Login</string>
     <string name="string_bt_cadastrar">Cadastrar</string>
     <string name="string_nav_action" translatable="false">Action Figure</string>
     <string name="string_nav_logout" translatable="false">Logout</string>
@@ -56,6 +56,9 @@
     <string name="string_frag_downlaod" translatable="false">Dowload PDF</string>
     <string name="string_manga_nome">Nome</string>
     <string name="string_manga_autor">Autor</string>
+    <string name ="string_comentario">Comentário</string>
+    <string name="string_campo_nao_obg">Campo não obrigatorio</string>
+    <string name="string_btn_enviar">Enviar</string>
 
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>

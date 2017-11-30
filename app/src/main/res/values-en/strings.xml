@@ -10,7 +10,7 @@
     <string name="menu_save">Save</string>
     <string name="menu_search">Search</string>
     <string name="string_bt_cadastrar">Register</string>
-    <string name="string_bt_login"></string>
+    <string name="string_bt_login">Login</string>
     <string name="string_cadastro">Make your Registration</string>
     <string name="string_cidade">City:</string>
     <string name="string_cep">Zip Code:</string>
@@ -42,4 +42,12 @@
     <string name="title_produto">Products</string>
     <string name="menu_communicate">Communicate</string>
     <string name="title_consulta">Consult</string>
+    <string name="insira_seu_email">Insert your Email</string>
+    <string name="menu_carrinho">Cart</string>
+    <string name="string_btn_enviar">Send</string>
+    <string name="string_campo_nao_obg">Required field</string>
+    <string name="string_comentario">Comment</string>
+    <string name="string_email" translatable="false">E-mail</string>
+    <string name="string_emaiul">E-mail:</string>
+    <string name="title_login" translatable="false">Login</string>
 </resources>

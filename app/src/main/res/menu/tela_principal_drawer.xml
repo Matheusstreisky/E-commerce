@@ -21,7 +21,7 @@
                 android:id="@+id/nav_pdf"
                 android:title="@string/menu_pdf" />
             <item
-                android:id="@+id/nav_sac"
+                android:id="@+id/nav_faq"
                 android:title="@string/string_nav_sac"/>
         </menu>
     </item>
